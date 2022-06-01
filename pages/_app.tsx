@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import '../styles/landingpage.css';
 import '../styles/instructor.css';
+import '../styles/catagory.css';
+import '../styles/instructor_course.css';
+import '../styles/instructor_review.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
