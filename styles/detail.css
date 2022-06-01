@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Quicksand", sans-serif;
+}
+
+.detail-header {
+    width: 800px;
+    margin: 100px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.detail-header .item-name {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.detail-header .item-author {
+    color: #8B8BA5;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.detail-header .item-review {
+    margin-bottom: 20px;
+}
+
+.detail-header img {
+    border-radius: 50px;
+    width: 100%;
+}
+
+
+
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 16px; */
+    margin: 0 170px;
+}
+
+.detail-content .detail-information {
+    width: 600px;
+}
+
+
+h3 {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 50px 0 20px;
+}
+
+.detail-information p {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.detail-information .detail-galery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.detail-information .detail-galery img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.detail-review {
+    list-style: none;
+}
+
+
+.detail-review .item-review {
+    margin-bottom: 30px;
+}
+
+.detail-review .item-review .review-account {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    /* font-size: 20px; */
+    margin-bottom: 25px;
+}
+
+.detail-review .item-review .review-account img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+}
+
+.detail-review .item-review .review-account .account-detail {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+}
+
+.detail-review .item-review .review-account h4 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.detail-content .detail-transaction {
+    width: 250px;
+    margin-right: auto;
+}
+
+.detail-transaction .price {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.detail-transaction .label {
+    font-weight: 400;
+    font-size: 16px;
+    color: #8B8BA5;
+    margin-bottom: 24px;
+}
+
+.detail-transaction button {
+    width: 250px;
+    height: 50px;
+    background: #F7C531;
+    padding: 16px 0;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    border: none;
+    border-radius: 32px 32px 15px 15px;
+}
+
+.detail-transaction button:hover {
+    background-color: #ffa500;
+}
+.transaction-additional .additional-item {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.transaction-additional .additional-item .additional-details {
+    margin: auto 0;
+}
+
+
+.transaction-additional .additional-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}

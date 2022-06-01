@@ -5,7 +5,7 @@ import { StarSharp } from 'react-ionicons';
 const Home: NextPage = () => {
   return (
     <>
-      <section className="landing_section">
+      {/* <section className="landing_section">
         <div className="landing_information">
           <h1 className="landing_title">
             Eat What You Cook With Us, Together!
@@ -18,13 +18,6 @@ const Home: NextPage = () => {
         </div>
         <div className="landing_image">
           <Image src="/assets/mainPict.png" alt="" width={625} height={405} />
-          <Image
-            className="play_button"
-            src="/assets/playButton.svg"
-            alt=""
-            width={70}
-            height={70}
-          />
         </div>
       </section>
 
@@ -49,11 +42,36 @@ const Home: NextPage = () => {
             <h3 className="card_title">Avocado Muscle</h3>
             <p className="card_description">John Lennonk</p>
             <div className="review-content-star">
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
+              <Image
+                src="/icon/star.svg"
+                width={22}
+                height={22}
+                alt="Star Icon"
+              />
+              <Image
+                src="/icon/star.svg"
+                width={22}
+                height={22}
+                alt="Star Icon"
+              />
+              <Image
+                src="/icon/star.svg"
+                width={22}
+                height={22}
+                alt="Star Icon"
+              />
+              <Image
+                src="/icon/star.svg"
+                width={22}
+                height={22}
+                alt="Star Icon"
+              />
+              <Image
+                src="/icon/star.svg"
+                width={22}
+                height={22}
+                alt="Star Icon"
+              />
             </div>
           </div>
           <div className="card">
@@ -172,7 +190,10 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
+      <h1>This page not available</h1>
+      <p>Something error in index page, click below for another page</p>
+      <a href="/detail/12">Detail</a>
     </>
   );
 };
