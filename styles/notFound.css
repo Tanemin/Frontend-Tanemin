@@ -1,0 +1,77 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Quicksand", sans-serif;
+}
+
+
+/* 
+ Header 
+ */
+
+.logo-text {
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* 
+Main Content 
+*/
+
+.dangger-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dangger-container a{
+    text-decoration: none;
+    color: black;
+}
+
+.dangger-container .dangger-image {
+    max-height: 180px;
+    /* width: 625px; */
+    margin: 5rem auto;
+}
+
+.dangger-container .dangger-text {
+
+    margin: 10px auto;
+    text-align: center;
+}
+
+.dangger-container .dangger-text .dangger-title {
+
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 1rem;
+}
+
+.dangger-container .dangger-text p {
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    width: 325px;
+
+    color: #8B8BA5;
+}
+
+
+.dangger-container .btn-style {
+    background: #F7C531;
+    width: 220px;
+    padding: 16px 0;
+    margin: 10px auto;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 32px 32px 15px 15px;
+}

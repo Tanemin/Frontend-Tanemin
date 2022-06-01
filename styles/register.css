@@ -1,0 +1,126 @@
+
+*{
+    font-family: "Quicksand";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.register{
+    margin: 100px auto;
+    width: 100%;
+    text-align: center;
+}
+.register h1{
+    font-size: 46px;
+    font-weight: 700px;
+    color: #272042;
+    margin-bottom: 30px;
+}
+
+.control-label {
+
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8B8BA5;
+    
+}
+
+.form {
+    width: 320px;
+    height: 455px;
+    left: 864px;
+    top: 200px;
+    padding-right: 100px;
+}
+
+.form-group{
+    margin-top: 24px;
+}
+
+.form-control{
+    box-sizing: border-box;
+    display: inline;
+    align-items: center;
+    width: 320px;
+    height: 45px;
+    left: 864px;
+    top: 228px;
+    margin: 7px 0;
+    background: #FBFBFB;
+    border: 1px solid #F0F0F0;
+    border-radius: 8px;
+    
+}
+
+.text-or {
+    font-size: 16px;
+    color: #8B8BA5;
+    font-weight: 400px;
+    text-align: center;
+   margin-left: 38%;
+}
+
+button.secondary{
+    width: 314px;
+    height: 50px;
+    margin: 24px 0;
+    background-color: #4E944F;
+    padding: 10px 40px;
+    border: none;
+    /* border-radius: 70px; */
+    color: #ffff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 40px 40px 20px 20px;
+    text-align: center;
+}
+
+.btn-google{
+    width: 314px;
+    height: 50px;
+    margin: 24px 0;
+    background-color: #FBFBFB;
+    padding: 10px 40px;
+    border: none;
+    /* border-radius: 70px; */
+    color: #A9A9A9;
+    font-size: 18px;
+    font-weight: medium;
+    border-radius: 40px 40px 20px 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-fb{
+    width: 314px;
+    height: 50px;
+    background-color: #FBFBFB;
+    padding: 10px 40px;
+    border: none;
+    /* border-radius: 70px; */
+    color: #A9A9A9;
+    font-size: 18px;
+    font-weight: medium;
+    border-radius: 40px 40px 20px 20px;
+    font-size: 18px;
+    
+}
+.rectangle{
+    margin-top: -18px ; 
+    margin-left: 38%; 
+
+    width: 229px;
+    height: 8px;
+    left: 566px;
+    top: 248px;
+    
+    background: #6EB257;
+    border-radius: 100px ;
+    /* position: sticky !important; */
+    
+}
+
