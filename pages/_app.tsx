@@ -14,6 +14,7 @@ import '../styles/notFound.css';
 import '../styles/responsive.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ChakraProvider } from '@chakra-ui/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -46,7 +47,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
         />
       </Head>
-      <Component {...pageProps} />
+
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 }

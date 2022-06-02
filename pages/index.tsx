@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { StarSharp } from 'react-ionicons';
 
 const Home: NextPage = () => {
@@ -193,7 +194,7 @@ const Home: NextPage = () => {
       </section> */}
       <h1>This page not available</h1>
       <p>Something error in index page, click below for another page</p>
-      <a href="/detail/12">Detail</a>
+      <Link href="/detail/12">Detail</Link>
     </>
   );
 };

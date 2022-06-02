@@ -38,10 +38,9 @@ button {
 }
 
 .nav-bar .nav-menu {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: auto 1fr auto;
-  /* background-color: rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav-bar .nav-menu .nav-search {
   display: grid;

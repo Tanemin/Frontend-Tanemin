@@ -58,17 +58,17 @@ export default function InstructorReview() {
             </div>
             <div className="review-content-profile">
               <div className="review-content-profile__img">
-               <Image
-                src="/assets/avatar.jpg"
-                alt="profile-image"
-                width={62.9}
-                height={60}
+                <Image
+                  src="/assets/avatar.jpg"
+                  alt="profile-image"
+                  width={62.9}
+                  height={60}
                 />
-              <p className="review-content-profile__name">Rhinoe Kaku</p>
+                <p className="review-content-profile__name">Rhinoe Kaku</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );
