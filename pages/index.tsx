@@ -192,9 +192,15 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section> */}
-      <h1>This page not available</h1>
-      <p>Something error in index page, click below for another page</p>
+      <h1 className="fs-1">This page not available</h1>
+      <p className="fs-1">
+        Something error in index page, click below for another page
+      </p>
       <Link href="/detail/12">Detail</Link>
+      <br />
+      <Link href="/not">Notfound</Link>
+      <br />
+      <Link href="/instructor">Instructor</Link>
     </>
   );
 };
