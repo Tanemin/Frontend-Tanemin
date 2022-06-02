@@ -1,7 +1,5 @@
-import { TabList, Tab, Tabs, TabPanels, TabPanel } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import { StarSharp } from 'react-ionicons';
 import Footer from '../components/organisms/Footer';
 import Navbar from '../components/organisms/Navbar';
 import TabListComponent from '../components/organisms/TabListComponent';

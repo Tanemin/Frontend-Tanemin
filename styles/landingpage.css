@@ -146,6 +146,7 @@
   margin-top: 12px;
   font-size: 2.4rem;
   color: #f7c531;
+  display: flex !important;
   margin-bottom: 2rem;
 }
 

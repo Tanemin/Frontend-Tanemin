@@ -1,38 +1,22 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Input from '../components/atoms/Input';
+import Button from '../components/atoms/Button';
 
 export default function Register() {
-    return (
-        <main>
-            <div  className="register" >
-            <h1>Lets Start New Journey<div  className="rectangle"></div></h1>
-        
-                <form action=""  className="regis">
-                    <div  className="form-group">
-                        <label  className="control-label">Full Name</label> <br />
-                        <input  className="form-control" name="fullname" id="fullname" type="text" />
-                    </div>
-                    <div  className="form-group">
-                        <label  className="control-label">Favorite Plant</label> <br />
-                        <input  className="form-control" name="favorite" id="favorite" type="text" />
-                    </div>
-                    <div  className="form-group">
-                        <label  className="control-label">Email</label> <br/>
-                        <input  className="form-control" name="email" id="email" type="email"/> 
-                    </div>
-                    <div  className="form-group">
-                        <label  className="control-label">Password</label><br/>
-                        <input  className="form-control" name="password" id="password" type="password" />
-                    </div>
-                    <button  className="secondary">Sign In</button>
-                    <p  className="text-or2">or continue with </p>
-                    <button   className="btn-google">
-                        <Image src="/assets/google.svg" alt="" width={25.41} height={26} /> Sign In with
-                        Google</button><br />
-                    <button   className="btn-fb"><Image src="/assets/fb.svg" alt="" width={25.41} height={26}/> Sign In with Facebook</button>
-                </form>
-            </div>
-        </main>        
-       
-    );
+  return (
+    <div className="register">
+      <h1>
+        Lets <span className="underline">Start New</span> Journey
+      </h1>
+      <form action="" className="regis">
+        <Input name="fullname" field="Full Name" id="fullname" type="text" />
+        <Input name="email" field="Email" id="email" type="email" />
+        <Input name="password" field="Password" id="password" type="password" />
+        <button className="secondary">Sign In</button>
+        <p className="text-or2">or continue with </p>
+        <Button value="Sign In With Google" assets="google.svg" />
+        <Button value="Sign In With Facebook" assets="fb.svg" />
+      </form>
+    </div>
+  );
 }
