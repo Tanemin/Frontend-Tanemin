@@ -25,7 +25,7 @@ export default function Register() {
                         <input  className="form-control" name="password" id="password" type="password" />
                     </div>
                     <button  className="secondary">Sign In</button>
-                    <p  className="text-or">or continue with </p>
+                    <p  className="text-or2">or continue with </p>
                     <button   className="btn-google">
                         <Image src="/assets/google.svg" alt="" width={25.41} height={26} /> Sign In with
                         Google</button><br />
