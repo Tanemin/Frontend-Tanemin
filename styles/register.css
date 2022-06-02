@@ -6,6 +6,15 @@
     box-sizing: border-box;
 }
 
+.regis{
+    width: 320px;
+    height: 641px;
+    left: 560px;
+    top: 200px;
+    text-align: center;
+    display: inline;
+    align-items: center;
+}
 
 .register{
     margin: 100px auto;
@@ -37,9 +46,6 @@
     padding-right: 100px;
 }
 
-.form-group{
-    margin-top: 24px;
-}
 
 .form-control{
     box-sizing: border-box;
@@ -56,12 +62,12 @@
     
 }
 
-.text-or {
+.text-or2 {
     font-size: 16px;
     color: #8B8BA5;
     font-weight: 400px;
     text-align: center;
-   margin-left: 38%;
+  
 }
 
 button.secondary{
