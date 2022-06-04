@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import { StarSharp } from 'react-ionicons';
 import Navbar from '../components/organisms/Navbar';
 import CardContainer from '../components/molecules/CardContainer';
 
