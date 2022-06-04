@@ -14,7 +14,16 @@ export default function TabListComponent() {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>List Tanaman</p>
+            <div className="card-content">
+              <div className="card-content__image">
+                <img src="/assets/content-img.jpg" alt="food-image" />
+              </div>
+              <div className="card-content__info">
+                <p className="food-name">Avocado Muscle</p>
+                <p className="food-author">John Doe</p>
+                <div className="star-container"></div>
+              </div>
+            </div>
           </TabPanel>
           <TabPanel>
             <Review />

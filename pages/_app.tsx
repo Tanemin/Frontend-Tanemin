@@ -4,8 +4,6 @@ import '../styles/navbar.css';
 import '../styles/catagory.css';
 import '../styles/detail.css';
 import '../styles/instructor.css';
-import '../styles/instructor_course.css';
-import '../styles/instructor_review.css';
 import '../styles/login.css';
 import '../styles/register.css';
 import '../styles/notFound.css';

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .detail-content {
         display: flex;
         flex-direction: column-reverse;
@@ -39,4 +39,25 @@
     .transaction-additional{
         grid-template-columns: repeat(2, 1fr);
     } 
+} */
+
+@media (max-width: 84em) {
+  .content-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 75em) {
+  .searchBar {
+    width: 0;
+  }
+  .content-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 59em) {
+  .content-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
