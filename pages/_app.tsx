@@ -8,6 +8,9 @@ import '../styles/login.css';
 import '../styles/register.css';
 import '../styles/notFound.css';
 import '../styles/landingpage.css';
+import '../styles/member-page-styles/overview.css';
+import '../styles/member-page-styles/sidebar.css';
+import '../styles/member-page-styles/utilities.css';
 
 import '../styles/responsive.css';
 import type { AppProps } from 'next/app';
