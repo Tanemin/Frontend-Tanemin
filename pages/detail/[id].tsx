@@ -13,9 +13,10 @@ export default function Detail() {
     plantName: '',
     imageCover: '',
     description: '',
+    reviews: '',
   });
 
-  const getPlantDetailAPI = useCallback(async (id) => {
+  const getPlantDetailAPI = useCallback(async (id: string) => {
     const data = await getDetailPlant(id);
     setDataItem(data.plant);
   }, []);
@@ -23,7 +24,8 @@ export default function Detail() {
   useEffect(() => {
     if (isReady) {
       console.log('Router sudah tersedia');
-      getPlantDetailAPI(query.id);
+      console.log(query.id);
+      getPlantDetailAPI(String(query.id));
     } else {
       console.log('Router tidak tersedia');
     }

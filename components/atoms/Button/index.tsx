@@ -12,7 +12,7 @@ export default function Button(props: ButtonProps) {
   return (
     <>
       <Link href={href}>
-        <a className="d-flex justify-content-evenly align-items-center btn-custom">
+        <a className="btn d-flex justify-content-evenly align-items-center btn-custom">
           <Image src={`/assets/${assets}`} alt="" width={25.41} height={26} />
           {value}
         </a>

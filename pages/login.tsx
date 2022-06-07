@@ -15,7 +15,7 @@ export default function Login() {
           priceless.
         </p>
         <div className="link">
-          If you have no account please <br />{' '}
+          If you have no account please <br />
           <a href="#">register new account</a>
         </div>
       </div>
@@ -28,7 +28,7 @@ export default function Login() {
             field="Password"
             type="password"
           />
-          <button className="secondary">Sign In</button>
+          <button className="btn secondary">Sign In</button>
         </form>
         <p className="text-or">or continue with </p>
         <Button value="Sign In With Google" assets="google.svg" />

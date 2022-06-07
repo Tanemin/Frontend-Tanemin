@@ -8,7 +8,12 @@ interface CardData {
 }
 
 export default function CardContainer(props: CardData) {
-  const { imageUrl, plantName, author, href } = props;
+  const {
+    imageUrl = '/assets/content-img.jpg',
+    plantName,
+    author,
+    href,
+  } = props;
   return (
     <>
       <div className="card-content">

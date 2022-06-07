@@ -1,10 +1,11 @@
+import { Avatar, Center, Wrap, WrapItem } from '@chakra-ui/react';
 import React from 'react';
 
 export default function MainList() {
   return (
     <>
       {' '}
-      <div className="nav-menu">
+      {/* <div className="nav-menu">
         <div className="nav-list" id="navList">
           <a href="" className="nav-item active">
             Home
@@ -118,7 +119,18 @@ export default function MainList() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Center>
+        <Wrap>
+          <WrapItem>
+            <Avatar
+              name="Dan Abrahmov"
+              size={'xl'}
+              src="https://bit.ly/dan-abramov"
+            />
+          </WrapItem>
+        </Wrap>
+      </Center>
     </>
   );
 }

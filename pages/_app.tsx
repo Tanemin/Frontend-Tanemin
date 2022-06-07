@@ -11,6 +11,7 @@ import '../styles/landingpage.css';
 import '../styles/member-page-styles/overview.css';
 import '../styles/member-page-styles/sidebar.css';
 import '../styles/member-page-styles/utilities.css';
+import '../styles/globals.css';
 
 import '../styles/responsive.css';
 import type { AppProps } from 'next/app';

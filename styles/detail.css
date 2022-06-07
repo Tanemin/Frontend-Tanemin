@@ -25,9 +25,6 @@
   width: 100%;
 }
 
-
-
-
 .detail-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -96,12 +93,10 @@
   font-size: 18px;
 }
 
-
 .detail-transaction .price {
   font-weight: 700;
   font-size: 36px;
 }
-
 
 .detail-transaction .label {
   font-weight: 400;
@@ -161,4 +156,4 @@
   width: 100% !important;
   position: relative !important;
   height: unset !important;
-} 
+}

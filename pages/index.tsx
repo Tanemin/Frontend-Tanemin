@@ -1,30 +1,31 @@
+import { Avatar, WrapItem } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { StarSharp } from 'react-ionicons';
+import Button from '../components/atoms/Button';
+import CardContainer from '../components/molecules/CardContainer';
+import Footer from '../components/organisms/Footer';
+import Navbar from '../components/organisms/Navbar';
 
 const Home: NextPage = () => {
   return (
     <>
-      {/* <section className="landing_section">
+      <Navbar />
+      <section className="landing_section">
         <div className="landing_information">
-          <h1 className="landing_title">
-            Eat What You Cook With Us, Together!
-          </h1>
+          <h1 className="landing_title">Mari hijaukan bumi bersama kami</h1>
           <p className="landing_description">
-            When you eat something that cooked by yourself, the happiness is
-            priceless.
+            turut berkontribusi dalam upaya penghijauan bumi kita
           </p>
-          <button className="landing_button">Decide a Menu</button>
+          <Button value="Test" />
         </div>
         <div className="landing_image">
-          <Image src="/assets/mainPict.png" alt="" width={625} height={405} />
+          <img src="/assets/mainPict.png" alt="" />
         </div>
       </section>
 
       <section className="featured">
-        <p className="featured_description">Watch Now</p>
-        <h2 className="featured_title">Special to Try</h2>
+        <h2 className="featured_title">Tanaman Terbaik Kami</h2>
         <nav className="featured_nav">
           <li>Healty Food</li>
           <li>Lunch</li>
@@ -32,103 +33,26 @@ const Home: NextPage = () => {
           <li>Shake</li>
         </nav>
         <div className="item_list">
-          <div className="card">
-            <Image
-              className="card_image"
-              src="/assets/pic.svg"
-              alt=""
-              width={626}
-              height={405}
-            />
-            <h3 className="card_title">Avocado Muscle</h3>
-            <p className="card_description">John Lennonk</p>
-            <div className="review-content-star">
-              <Image
-                src="/icon/star.svg"
-                width={22}
-                height={22}
-                alt="Star Icon"
-              />
-              <Image
-                src="/icon/star.svg"
-                width={22}
-                height={22}
-                alt="Star Icon"
-              />
-              <Image
-                src="/icon/star.svg"
-                width={22}
-                height={22}
-                alt="Star Icon"
-              />
-              <Image
-                src="/icon/star.svg"
-                width={22}
-                height={22}
-                alt="Star Icon"
-              />
-              <Image
-                src="/icon/star.svg"
-                width={22}
-                height={22}
-                alt="Star Icon"
-              />
-            </div>
-          </div>
-          <div className="card">
-            <Image
-              className="card_image"
-              src="/assets/pic.svg"
-              alt=""
-              width={70}
-              height={70}
-            />
-            <h3 className="card_title">Avocado Muscle</h3>
-            <p className="card_description">John Lennonk</p>
-            <div className="review-content-star">
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-            </div>
-          </div>
-          <div className="card">
-            <Image
-              className="card_image"
-              src="/assets/pic.svg"
-              alt=""
-              width={70}
-              height={70}
-            />
-            <h3 className="card_title">Avocado Muscle</h3>
-            <p className="card_description">John Lennonk</p>
-            <div className="review-content-star">
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-            </div>
-          </div>
-          <div className="card">
-            <Image
-              className="card_image"
-              src="/assets/pic.svg"
-              alt=""
-              width={70}
-              height={70}
-            />
-            <h3 className="card_title">Avocado Muscle</h3>
-            <p className="card_description">John Lennonk</p>
-            <div className="review-content-star">
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-              <StarSharp color={'#F7C531'} height="22px" width="22px" />
-            </div>
-          </div>
+          <CardContainer
+            author="SehatMantab"
+            plantName="Rizki Plant"
+            href="/Category"
+          />
+          <CardContainer
+            author="SehatMantab"
+            plantName="Rizki Plant"
+            href="/Category"
+          />
+          <CardContainer
+            author="SehatMantab"
+            plantName="Rizki Plant"
+            href="/Category"
+          />
+          <CardContainer
+            author="SehatMantab"
+            plantName="Rizki Plant"
+            href="/Category"
+          />
         </div>
       </section>
 
@@ -139,11 +63,13 @@ const Home: NextPage = () => {
           sendiri
         </p>
         <div className="testimoni_detail">
-          <Image src="/assets/testiPict.svg" alt="" width={70} height={70} />
-          <div className="testimoni_person">
-            <p className="testimoni_name">Camella Sarrah</p>
-            <p className="testimoni_title">Vege Master</p>
-          </div>
+          <WrapItem>
+            <Avatar
+              size={'xl'}
+              name="Dan Abrahmov"
+              src="https://bit.ly/dan-abramov"
+            />
+          </WrapItem>
         </div>
       </section>
 
@@ -166,32 +92,8 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="download">
-        <Image src="/assets/downloadPict.svg" alt="" width={70} height={70} />
-        <div className="download_detail">
-          <p className="download_text">Download our app and join the contest</p>
-          <p className="download_text2">
-            In order to improve our cooking skills, we do need a food
-            photography
-          </p>
-          <div className="download_button_list">
-            <Image
-              className="download_button"
-              src="/assets/appStoreDownload.svg"
-              width={70}
-              height={70}
-              alt=""
-            />
-            <Image
-              className="download_button"
-              src="/assets/googlePlayDownload.svg"
-              width={70}
-              height={70}
-              alt=""
-            />
-          </div>
-        </div>
-      </section> */}
+      <Footer />
+
       <h1 className="fs-1">This page not available</h1>
       <p className="fs-1">
         Something error in index page, click below for another page
@@ -201,6 +103,8 @@ const Home: NextPage = () => {
       <Link href="/not">Notfound</Link>
       <br />
       <Link href="/instructor">Instructor</Link>
+      <br />
+      <Link href="/category">Category</Link>
     </>
   );
 };
