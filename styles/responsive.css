@@ -60,3 +60,51 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/* login */
+@media screen and (max-width: 650px){
+  .login-container{
+      width: 100%;
+      display: block;
+  }
+   .text-hero{
+       margin: 24px 0;
+       width: 100%;
+ 
+       margin-left: 15%;
+       margin-right: 0;
+   }
+   .form{
+       width: 100%;
+       height: auto;
+       padding-right: 25px;
+       margin-left: 10%;
+       padding-left: 0%;
+   }
+
+}
+@media screen and (max-width: 800px){
+  .text-hero{
+      width: 100%;
+      height: auto;
+      margin-left: 20%;
+      margin-right: 0; 
+  }
+ 
+}
+
+@media screen and (max-width: 900px){
+    .text-hero{
+        width: 100%;
+        height: auto;
+        margin-left: 10%;
+        margin-right: 0; 
+    }
+}
+
+@media screen and (min-width: 1200px){
+   .container{
+       max-width: 1200px;
+   }
+}
+
