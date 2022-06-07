@@ -22,22 +22,26 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <html lang="en" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Tanemin untuk bumi yang lebih indah"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-
+        <title>Tanemin</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap"
           rel="stylesheet"
           crossOrigin="anonymous"
         />
-
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
           rel="stylesheet"

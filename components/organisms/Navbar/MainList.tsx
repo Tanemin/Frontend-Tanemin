@@ -1,4 +1,4 @@
-import { Avatar, Center, Wrap, WrapItem } from '@chakra-ui/react';
+import { Avatar, Center, Link, Wrap, WrapItem } from '@chakra-ui/react';
 import React from 'react';
 
 export default function MainList() {
@@ -128,9 +128,15 @@ export default function MainList() {
               size={'xl'}
               src="https://bit.ly/dan-abramov"
             />
-          </WrapItem>
+          </WrapItem>{' '}
         </Wrap>
       </Center>
+      <br />
+      <h1 className="fs-1">This page are available</h1>
+      <br />
+      <Link href="/instructor">Instructor</Link>
+      <br />
+      <Link href="/category">Category</Link>
     </>
   );
 }

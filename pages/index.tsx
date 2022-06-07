@@ -1,4 +1,4 @@
-import { Avatar, WrapItem } from '@chakra-ui/react';
+import { Avatar, Center, Heading, WrapItem } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,17 +12,30 @@ const Home: NextPage = () => {
     <>
       <Navbar />
       <section className="landing_section">
-        <div className="landing_information">
-          <h1 className="landing_title">Mari hijaukan bumi bersama kami</h1>
-          <p className="landing_description">
-            turut berkontribusi dalam upaya penghijauan bumi kita
-          </p>
-          <Button value="Test" />
-        </div>
-        <div className="landing_image">
-          <img src="/assets/mainPict.png" alt="" />
+        <div className="landing_section-content">
+          <div className="landing_information">
+            <h1 className="landing_title">Mari hijaukan bumi bersama kami</h1>
+            <p className="landing_description">
+              turut berkontribusi dalam upaya penghijauan bumi kita
+            </p>
+            <Button value="Test" />
+          </div>
+          <div className="landing_image">
+            <img src="/assets/mainPict.png" alt="" />
+          </div>
         </div>
       </section>
+
+      <section className="sponsor_section">
+        <h1>Media Sponsor</h1>
+        <div className="landing_section-sponsor">
+          <img src="/assets/dicoding-logo-full.png" alt="" />
+          <img src="/assets/download(1).png" alt="" />
+          <img src="/assets/kampus-merdeka.png" alt="" />
+        </div>
+      </section>
+
+      <hr />
 
       <section className="featured">
         <h2 className="featured_title">Tanaman Terbaik Kami</h2>
@@ -93,18 +106,6 @@ const Home: NextPage = () => {
       </section>
 
       <Footer />
-
-      <h1 className="fs-1">This page not available</h1>
-      <p className="fs-1">
-        Something error in index page, click below for another page
-      </p>
-      <Link href="/detail/12">Detail</Link>
-      <br />
-      <Link href="/not">Notfound</Link>
-      <br />
-      <Link href="/instructor">Instructor</Link>
-      <br />
-      <Link href="/category">Category</Link>
     </>
   );
 };
