@@ -1,18 +1,15 @@
 import React from 'react';
+interface DetailInformationProps {
+  description: string;
+}
 
-export default function DetailInformation() {
+export default function DetailInformation(props: DetailInformationProps) {
+  const { description } = props;
   return (
     <>
       <div className="detail-information">
         <h3>About Course</h3>
-        <p>
-          This lesson is aimed to give you the confidence to chop like a pro.
-          Proper knife skills are vital in the kitchen and knowing the proper
-          technique can literally save you a finger. In this lesson, you will
-          not only learn how to use your knife but also how to sharpen a dull
-          blade. You will also be able to identify the various cuts for
-          vegetables using your newly gained knife skills.
-        </p>
+        <p>{description}</p>
         <br />
         <p>
           Sauce has the power to make or break a dish, and mastering the art of
