@@ -1,4 +1,5 @@
 import { StarIcon } from '@chakra-ui/icons';
+import { Image } from '@chakra-ui/react';
 import React from 'react';
 interface HeaderDetailProps {
   itemName: string;
@@ -27,7 +28,11 @@ export default function Header(props: HeaderDetailProps) {
             ))}{' '}
           | 12.234 students
         </p>
-        <img src={imgUrl} alt="Cooking master" />
+        <Image
+          src={imgUrl}
+          fallbackSrc="https://via.placeholder.com/150"
+          alt="Cooking master"
+        />
       </div>
     </>
   );

@@ -1,8 +1,7 @@
-import { Avatar, Center, Heading, WrapItem } from '@chakra-ui/react';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { Avatar, Button, Center, Heading, WrapItem } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import Button from '../components/atoms/Button';
+// import Button from '../components/atoms/Button';
 import CardContainer from '../components/molecules/CardContainer';
 import Footer from '../components/organisms/Footer';
 import Navbar from '../components/organisms/Navbar';
@@ -11,21 +10,30 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar />
-      <section className="landing_section">
+      <section className="container landing_section">
         <div className="landing_section-content">
           <div className="landing_information">
-            <h1 className="landing_title">Mari hijaukan bumi bersama kami</h1>
+            <h1 className="landing_title">
+              Mari hijaukan bumi <br /> bersama kami
+            </h1>
             <p className="landing_description">
-              turut berkontribusi dalam upaya penghijauan bumi kita
+              turut berkontribusi dalam upaya penghijauan bumi kita agar masa
+              depan yang lebih indah
             </p>
-            <Button value="Test" />
+            <Button
+              rightIcon={<ArrowForwardIcon />}
+              colorScheme="teal"
+              variant="solid"
+            >
+              Jelajahi
+            </Button>
           </div>
           <div className="landing_image">
             <img src="/assets/mainPict.png" alt="" />
           </div>
         </div>
       </section>
-
+      {/* 
       <section className="sponsor_section">
         <h1>Media Sponsor</h1>
         <div className="landing_section-sponsor">
@@ -33,38 +41,33 @@ const Home: NextPage = () => {
           <img src="/assets/download(1).png" alt="" />
           <img src="/assets/kampus-merdeka.png" alt="" />
         </div>
-      </section>
+      </section> */}
 
       <hr />
 
       <section className="featured">
         <h2 className="featured_title">Tanaman Terbaik Kami</h2>
-        <nav className="featured_nav">
-          <li>Healty Food</li>
-          <li>Lunch</li>
-          <li>Vege Desert</li>
-          <li>Shake</li>
-        </nav>
+
         <div className="item_list">
           <CardContainer
             author="SehatMantab"
             plantName="Rizki Plant"
-            href="/Category"
+            href="629dc41024029026327912ed"
           />
           <CardContainer
             author="SehatMantab"
             plantName="Rizki Plant"
-            href="/Category"
+            href="629dc41024029026327912ed"
           />
           <CardContainer
             author="SehatMantab"
             plantName="Rizki Plant"
-            href="/Category"
+            href="629dc41024029026327912ed"
           />
           <CardContainer
             author="SehatMantab"
             plantName="Rizki Plant"
-            href="/Category"
+            href="629dc41024029026327912ed"
           />
         </div>
       </section>

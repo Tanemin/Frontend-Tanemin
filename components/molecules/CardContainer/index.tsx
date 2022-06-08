@@ -1,3 +1,4 @@
+import { Image } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 interface CardData {
@@ -18,7 +19,11 @@ export default function CardContainer(props: CardData) {
     <>
       <div className="card-content">
         <div className="card-content__image">
-          <img src={imageUrl} alt="food-image" />
+          <Image
+            src={imageUrl}
+            fallbackSrc="https://via.placeholder.com/150"
+            alt="Plants Category"
+          />
         </div>
         <div className="card-content__info">
           <Link href={`/detail/${href}`}>

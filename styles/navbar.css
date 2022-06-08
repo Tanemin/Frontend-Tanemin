@@ -219,16 +219,16 @@ button {
   margin-top: 40px;
 }
 
-.footer .footer-title {
+.footer-title {
   color: black;
   line-height: 4rem;
 }
 
-.footer .footer-list {
+.footer-list {
   display: grid;
 }
 
-.footer .footer-content {
+.footer-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -237,15 +237,15 @@ button {
   border-top: 1px solid #e5e5e5;
 }
 
-.footer .footer-content .footer-logo {
+.footer-content .footer-logo {
   margin: auto;
 }
 
-.footer .footer-content .footer-address p {
+.footer-content .footer-address p {
   color: #8b8ba5;
 }
 
-.footer .footer-copyright {
+.footer-copyright {
   font-weight: bold;
   text-align: center;
   padding: 2rem;

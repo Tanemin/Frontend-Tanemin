@@ -32,7 +32,13 @@ export default function Navbar() {
 
   return (
     <>
-      <Flex minWidth="max-content" alignItems="center" gap="2">
+      <Flex
+        minWidth="max-content"
+        alignItems="center"
+        paddingX="4"
+        paddingY="6"
+        gap="2"
+      >
         <Box p="2">
           <Heading size="lg">Tanemin</Heading>
         </Box>

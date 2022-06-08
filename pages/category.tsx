@@ -8,8 +8,12 @@ export default function Category() {
   const [plantList, setPlantList] = useState([]);
 
   const getPlantListItem = useCallback(async () => {
-    const data = await getPlants();
-    setPlantList(data);
+    try {
+      const data = await getPlants();
+      setPlantList(data);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   useEffect(() => {
@@ -42,15 +46,6 @@ export default function Category() {
           );
         })}
       </div>
-
-      {/* 
-        <div className="pagination">
-          <div className="page_button">1</div>
-          <div className="page_button">2</div>
-          <div className="page_button">3</div>
-          <div className="page_button">...</div>
-          <div className="page_button">90</div>
-        </div> */}
     </>
   );
 }

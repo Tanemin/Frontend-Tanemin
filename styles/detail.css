@@ -23,6 +23,8 @@
 .detail-header img {
   border-radius: 50px;
   width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 .detail-content {

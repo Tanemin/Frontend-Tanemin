@@ -14,21 +14,20 @@ export default function Detail() {
     imageCover: '',
     description: '',
     reviews: '',
+    price: 0,
   });
 
   const getPlantDetailAPI = useCallback(async (id: string) => {
-    const data = await getDetailPlant(id);
-    setDataItem(data.plant);
+    try {
+      const data = await getDetailPlant(id);
+      setDataItem(data.plant);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   useEffect(() => {
-    if (isReady) {
-      console.log('Router sudah tersedia');
-      console.log(query.id);
-      getPlantDetailAPI(String(query.id));
-    } else {
-      console.log('Router tidak tersedia');
-    }
+    getPlantDetailAPI(String(query.id));
   }, [getPlantDetailAPI, isReady, query.id]);
 
   return (
@@ -39,7 +38,7 @@ export default function Detail() {
         <div className="detail-content">
           <DetailInformation description={dataItem.description} />
           <div className="detail-transaction">
-            <FormPayment />
+            <FormPayment pricePlants={dataItem.price} />
             <Ingredients />
             <Tools />
           </div>
