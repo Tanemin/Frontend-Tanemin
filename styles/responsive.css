@@ -54,6 +54,11 @@
     font-size: 1.6rem;
     width: 80%;
   }
+
+  .detail-galery,
+  .transaction-additional {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 59em) {
@@ -81,8 +86,11 @@
   }
 
   .landing_section-content {
-    grid-template-columns: repeat(1, 1fr);
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .landing_image {
@@ -92,6 +100,11 @@
   .landing_information {
     grid-row: 2;
     align-items: center;
+  }
+
+  .detail-galery,
+  .transaction-additional {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

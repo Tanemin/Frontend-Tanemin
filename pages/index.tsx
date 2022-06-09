@@ -1,13 +1,8 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import {
-  Avatar,
-  Button,
-  Center,
-  Divider,
-  Heading,
-  WrapItem,
-} from '@chakra-ui/react';
+import { Avatar, Button, Image, WrapItem } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import Head from 'next/head';
+
 import CardContainer from '../components/molecules/CardContainer';
 import Footer from '../components/organisms/Footer';
 import Navbar from '../components/organisms/Navbar';
@@ -15,16 +10,19 @@ import Navbar from '../components/organisms/Navbar';
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Tanemin | Homepage</title>
+      </Head>
       <Navbar />
-      <section className="container landing_section">
+      <section className="container-fluid landing_section">
         <div className="landing_section-content">
           <div className="landing_information">
             <h1 className="landing_title">
               Mari hijaukan bumi <br /> bersama kami
             </h1>
             <p className="landing_description">
-              turut berkontribusi dalam upaya penghijauan bumi kita agar masa
-              depan yang lebih indah
+              turut berkontribusi dalam upaya penghijauan <br /> bumi kita agar
+              masa depan yang lebih indah
             </p>
             <Button
               rightIcon={<ArrowForwardIcon />}
@@ -35,7 +33,7 @@ const Home: NextPage = () => {
             </Button>
           </div>
           <div className="landing_image">
-            <img src="/assets/mainPict.png" alt="" />
+            <Image src="/assets/mainPict.png" alt="" />
           </div>
         </div>
       </section>
