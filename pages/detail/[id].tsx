@@ -20,7 +20,7 @@ export default function Detail() {
   const getPlantDetailAPI = useCallback(async (id: string) => {
     try {
       const data = await getDetailPlant(id);
-      setDataItem(data.plant);
+      setDataItem(data);
     } catch (error) {
       console.log(error);
     }
