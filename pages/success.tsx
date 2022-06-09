@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import { Image } from '@chakra-ui/react';
 
 export default function Success() {
   return (
     <main>
       <div className="dangger-container">
-        <img
+        <Image
           src="/assets/Register.png"
           className="dangger-image"
           alt="Registration"

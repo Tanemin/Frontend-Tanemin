@@ -1,49 +1,29 @@
-import { useRouter } from 'next/router';
-import React, { useCallback, useEffect, useState } from 'react';
-import Header from '../../components/organisms/Detail/Header';
-import DetailInformation from '../../components/organisms/Detail/DetailInformation';
-import FormPayment from '../../components/organisms/Detail/FormPayment';
-import Ingredients from '../../components/organisms/Detail/Ingredients';
-import Tools from '../../components/organisms/Detail/Tools';
-import { getDetailPlant } from '../../services/plant-list';
+import { Container, Skeleton, Spinner, useInterval } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import DetailComponent from '../../components/organisms/Detail';
 
 export default function Detail() {
-  const { query, isReady } = useRouter();
-  const [dataItem, setDataItem] = useState({
-    plantName: '',
-    imageCover: '',
-    description: '',
-    reviews: '',
-    price: 0,
-  });
+  const [isLoading, setIsLoading] = useState(true);
 
-  const getPlantDetailAPI = useCallback(async (id: string) => {
-    try {
-      const data = await getDetailPlant(id);
-      setDataItem(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
-  useEffect(() => {
-    getPlantDetailAPI(String(query.id));
-  }, [getPlantDetailAPI, isReady, query.id]);
+  useInterval(() => {
+    setIsLoading(false);
+  }, 1000);
 
   return (
     <>
-      {/* <Navbar /> */}
-      <div className="detail-container">
-        <Header itemName={dataItem.plantName} imgUrl={dataItem.imageCover} />
-        <div className="detail-content">
-          <DetailInformation description={dataItem.description} />
-          <div className="detail-transaction">
-            <FormPayment pricePlants={dataItem.price} />
-            <Ingredients />
-            <Tools />
-          </div>
-        </div>
-      </div>
+      {isLoading ? (
+        <Container centerContent>
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
+        </Container>
+      ) : (
+        <DetailComponent />
+      )}
     </>
   );
 }

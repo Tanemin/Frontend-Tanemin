@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import { Image } from '@chakra-ui/react';
 
 export default function Complated() {
   return (
     <main>
       <div className="dangger-container">
-        <img
+        <Image
           src="/assets/Scenes.png"
           className="dangger-image"
           alt="Completed Transaction"

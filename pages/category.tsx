@@ -3,9 +3,11 @@ import Navbar from '../components/organisms/Navbar';
 import CardContainer from '../components/molecules/CardContainer';
 import { getPlants } from '../services/plant-list';
 import { PlantTypes } from '../services/data-types';
+import { Skeleton, useInterval } from '@chakra-ui/react';
 
 export default function Category() {
   const [plantList, setPlantList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getPlantListItem = useCallback(async () => {
     try {
@@ -19,6 +21,10 @@ export default function Category() {
   useEffect(() => {
     getPlantListItem();
   }, [getPlantListItem]);
+
+  useInterval(() => {
+    setIsLoading(false);
+  }, 1000);
 
   return (
     <>
@@ -36,13 +42,14 @@ export default function Category() {
       <div className="content-container">
         {plantList.map((item: PlantTypes) => {
           return (
-            <CardContainer
-              key={item._id}
-              plantName={item.plantName}
-              author="SehatPedia"
-              imageUrl={item.imageCover}
-              href={item._id}
-            />
+            <Skeleton key={item._id} isLoaded={!isLoading}>
+              <CardContainer
+                plantName={item.plantName}
+                author="SehatPedia"
+                imageUrl={item.imageCover}
+                href={item._id}
+              />
+            </Skeleton>
           );
         })}
       </div>

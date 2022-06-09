@@ -1,6 +1,6 @@
 .detail-header {
   width: 60%;
-  margin: 100px auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 20px;
 }
@@ -51,7 +51,7 @@
   line-height: 28px;
 }
 
-.detail-information .detail-galery {
+.detail-galery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;

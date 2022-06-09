@@ -38,7 +38,7 @@ export default function Navbar() {
         paddingX="4"
         paddingY="6"
         gap="2"
-        className="container"
+        className="container-fluid"
       >
         <Box p="2">
           <Heading size="lg">Tanemin</Heading>
