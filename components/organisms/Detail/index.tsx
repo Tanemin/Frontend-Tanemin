@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { getDetailPlant } from '../../../services/plant-list';
+import Footer from '../Footer';
 import Navbar from '../Navbar';
 import DetailInformation from './DetailInformation';
 import FormPayment from './FormPayment';
@@ -35,6 +36,7 @@ export default function DetailComponent() {
   useEffect(() => {
     getPlantDetailAPI(String(query.id));
   }, [getPlantDetailAPI, isReady, query.id]);
+
   return (
     <>
       <Navbar />
@@ -54,6 +56,7 @@ export default function DetailComponent() {
             <Tools />
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

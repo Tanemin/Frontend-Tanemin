@@ -10,6 +10,7 @@ export const getPlants = async () => {
     });
 
     const { result } = response.data
+    console.log(result)
     return result
 }
 
@@ -19,6 +20,7 @@ export const getDetailPlant = async (id: string) => {
     });
 
     const { result } = response.data
+    console.log(result)
     return result
 
 }

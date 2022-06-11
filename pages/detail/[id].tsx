@@ -1,5 +1,5 @@
-import { Container, Skeleton, Spinner, useInterval } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { Container, Spinner, useInterval } from '@chakra-ui/react';
+import { useState } from 'react';
 import DetailComponent from '../../components/organisms/Detail';
 
 export default function Detail() {
@@ -17,8 +17,9 @@ export default function Detail() {
             thickness="4px"
             speed="0.65s"
             emptyColor="gray.200"
-            color="blue.500"
+            color="green.500"
             size="xl"
+            style={{ margin: '50%' }}
           />
         </Container>
       ) : (
