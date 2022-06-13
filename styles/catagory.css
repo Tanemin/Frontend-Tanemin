@@ -6,7 +6,7 @@ header {
   align-items: center;
 }
 
-.title {
+.explore-title {
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
@@ -15,7 +15,7 @@ header {
   color: #272042;
 }
 
-.description {
+.explore-description {
   margin-top: 10px;
   font-style: normal;
   font-weight: 400;
@@ -26,7 +26,6 @@ header {
 }
 
 .searchbar {
-  width: 390px;
   margin-top: 30px;
 }
 

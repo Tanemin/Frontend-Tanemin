@@ -58,6 +58,12 @@
   .transaction-additional {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Explore Section */
+  .explore-title,
+  .explore-description {
+    font-size: 100%;
+  }
 }
 
 @media (max-width: 59em) {

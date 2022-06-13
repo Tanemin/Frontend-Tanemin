@@ -9,7 +9,10 @@ export const getPlants = async () => {
         headers: { "Access-Control-Allow-Origin": "*" }
     });
 
+
     const { result } = response.data
+
+
     console.log(result)
     return result
 }

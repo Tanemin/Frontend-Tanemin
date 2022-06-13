@@ -1,5 +1,5 @@
 export interface PlantTypes {
-    _id: string,
+    id: string,
     plantName: string,
     rating: number
     imageCover: string
