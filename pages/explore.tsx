@@ -4,8 +4,9 @@ import CardContainer from '../components/molecules/CardContainer';
 import { getPlants } from '../services/plant-list';
 import { PlantTypes } from '../services/data-types';
 import { Skeleton, useInterval } from '@chakra-ui/react';
+import Footer from '../components/organisms/Footer';
 
-export default function Category() {
+export default function Explore() {
   const [plantList, setPlantList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,8 +31,8 @@ export default function Category() {
     <>
       <Navbar />
       <header className="heading">
-        <h1 className="title">Beverages Recommendations</h1>
-        <h3 className="description">Available 12,309 course</h3>
+        <h1 className="explore-title">Beverages Recommendations</h1>
+        <h3 className="explore-description">Available 12,309 course</h3>
 
         <div className="searchbar">
           <input type="text" placeholder="Search by name or receipt" />
@@ -42,17 +43,18 @@ export default function Category() {
       <div className="content-container">
         {plantList.map((item: PlantTypes) => {
           return (
-            <Skeleton key={item._id} isLoaded={!isLoading}>
+            <Skeleton key={item.id} isLoaded={!isLoading}>
               <CardContainer
                 plantName={item.plantName}
                 author="SehatPedia"
                 imageUrl={item.imageCover}
-                href={item._id}
+                href={item.id}
               />
             </Skeleton>
           );
         })}
       </div>
+      <Footer />
     </>
   );
 }

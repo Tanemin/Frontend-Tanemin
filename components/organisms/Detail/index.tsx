@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { getDetailPlant } from '../../../services/plant-list';
+import Footer from '../Footer';
 import Navbar from '../Navbar';
 import DetailInformation from './DetailInformation';
 import FormPayment from './FormPayment';
@@ -10,6 +11,7 @@ import Tools from './Tools';
 
 export default function DetailComponent() {
   const { query, isReady } = useRouter();
+  const router = useRouter();
   const [dataItem, setDataItem] = useState({
     id: '',
     plantName: '',
@@ -23,18 +25,23 @@ export default function DetailComponent() {
     difficulty: '',
   });
 
-  const getPlantDetailAPI = useCallback(async (id: string) => {
-    try {
-      const data = await getDetailPlant(id);
-      setDataItem(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  const getPlantDetailAPI = useCallback(
+    async (id: string) => {
+      try {
+        const data = await getDetailPlant(id);
+        setDataItem(data);
+      } catch (error) {
+        console.log(error);
+        router.push('/404');
+      }
+    },
+    [router]
+  );
 
   useEffect(() => {
     getPlantDetailAPI(String(query.id));
   }, [getPlantDetailAPI, isReady, query.id]);
+
   return (
     <>
       <Navbar />
@@ -54,6 +61,7 @@ export default function DetailComponent() {
             <Tools />
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

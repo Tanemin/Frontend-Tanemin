@@ -1,10 +1,3 @@
-* {
-  font-family: 'Quicksand';
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .register {
   margin: 100px auto;
   width: 100%;
@@ -82,7 +75,7 @@ button.secondary {
   content: '';
 
   width: 100%;
-  border-bottom: #6eb257 0.8rem solid;
+  border-bottom: #6eb257 0.4rem solid;
 
   background: #6eb257;
   position: absolute;

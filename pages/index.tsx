@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import CardContainer from '../components/molecules/CardContainer';
+import Statistics from '../components/molecules/Statistics';
 import Footer from '../components/organisms/Footer';
 import Navbar from '../components/organisms/Navbar';
 
@@ -91,26 +92,9 @@ const Home: NextPage = () => {
             />
           </WrapItem>
         </div>
-
-        <div className="data_list">
-          <div className="data_item">
-            <p className="data_value">180.000+</p>
-            <p className="data_label">MENU FOOD</p>
-          </div>
-          <div className="data_item">
-            <p className="data_value">20.000+</p>
-            <p className="data_label">CHEFS</p>
-          </div>
-          <div className="data_item">
-            <p className="data_value">400.000+</p>
-            <p className="data_label">COURSE</p>
-          </div>
-          <div className="data_item">
-            <p className="data_value">6.900.000</p>
-            <p className="data_label">ALUMNI</p>
-          </div>
-        </div>
       </section>
+
+      <Statistics />
 
       <Footer />
     </>
