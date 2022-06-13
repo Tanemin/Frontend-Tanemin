@@ -7,7 +7,7 @@ import {
   useNumberInput,
   VStack,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import NumberFormat from 'react-number-format';
 interface FormPaymentProps {
   pricePlants: number;
@@ -16,12 +16,16 @@ interface FormPaymentProps {
 export default function FormPayment(props: FormPaymentProps) {
   const { pricePlants } = props;
 
-  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-    useNumberInput({
-      step: 1,
-      defaultValue: 1,
-      min: 1,
-    });
+  const {
+    value,
+    getInputProps,
+    getIncrementButtonProps,
+    getDecrementButtonProps,
+  } = useNumberInput({
+    step: 1,
+    defaultValue: 1,
+    min: 1,
+  });
 
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
@@ -33,7 +37,7 @@ export default function FormPayment(props: FormPaymentProps) {
         <h3>Buy this Plant</h3>
         <p className="price">
           <NumberFormat
-            value={pricePlants * input.value}
+            value={pricePlants * +value}
             displayType={'text'}
             thousandSeparator={true}
             prefix={'Rp. '}
