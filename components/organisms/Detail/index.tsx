@@ -11,6 +11,7 @@ import Tools from './Tools';
 
 export default function DetailComponent() {
   const { query, isReady } = useRouter();
+  const router = useRouter();
   const [dataItem, setDataItem] = useState({
     id: '',
     plantName: '',
@@ -24,14 +25,18 @@ export default function DetailComponent() {
     difficulty: '',
   });
 
-  const getPlantDetailAPI = useCallback(async (id: string) => {
-    try {
-      const data = await getDetailPlant(id);
-      setDataItem(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  const getPlantDetailAPI = useCallback(
+    async (id: string) => {
+      try {
+        const data = await getDetailPlant(id);
+        setDataItem(data);
+      } catch (error) {
+        console.log(error);
+        router.push('/404');
+      }
+    },
+    [router]
+  );
 
   useEffect(() => {
     getPlantDetailAPI(String(query.id));

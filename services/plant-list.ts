@@ -22,6 +22,9 @@ export const getDetailPlant = async (id: string) => {
         headers: { "Access-Control-Allow-Origin": "*" }
     });
 
+    if (!response.ok) {
+    }
+
     const { result } = response.data
     console.log(result)
     return result

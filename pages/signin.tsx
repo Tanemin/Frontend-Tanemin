@@ -1,8 +1,11 @@
-import React from 'react';
+import Link from 'next/link';
+import React, { useRef, useState } from 'react';
 import Button from '../components/atoms/Button';
 import Input from '../components/atoms/Input';
 
-export default function Login() {
+export default function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <div className="login-container">
       <div className="text-hero">
@@ -16,13 +19,24 @@ export default function Login() {
         </p>
         <div className="link">
           If you have no account please <br />
-          <a href="#">register new account</a>
+          <Link href="/signup">
+            <a>register new account</a>
+          </Link>
         </div>
       </div>
       <div className="form">
         <form>
-          <Input name="email" id="email" field="Email" type="email" />
           <Input
+            value={email}
+            changeInput={(e) => setEmail(e.target.value)}
+            name="email"
+            id="email"
+            field="Email"
+            type="email"
+          />
+          <Input
+            value={password}
+            changeInput={(e) => setPassword(e.target.value)}
             name="password"
             id="password"
             field="Password"
