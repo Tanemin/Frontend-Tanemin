@@ -12,8 +12,8 @@ export default function Success() {
           alt="Registration"
         />
         <div className="dangger-text">
-          <h2 className="dangger-title">Verify Your Email</h2>
-          <p>Please check your email address for verification link</p>
+          <h2 className="dangger-title">Pendaftaran Sukses</h2>
+          <p>selamat bergabung bersama tanemin untuk dunia yang lebih indah</p>
         </div>
         <Link href={'/'}>
           <a className="btn-style">Back to home</a>

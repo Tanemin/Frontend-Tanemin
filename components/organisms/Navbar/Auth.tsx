@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import {
   Avatar,
   Button,
@@ -7,39 +8,63 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/react';
-import React from 'react';
+import Cookies from 'js-cookie';
+import Link from 'next/link';
+import React, { useCallback, useEffect, useState } from 'react';
+import { getUserData } from '../../../services/auth';
 
-interface AuthProps {
-  isLogin: boolean;
-}
+export default function Auth() {
+  const [isLogin, setIsLogin] = useState(false);
 
-export default function Auth(props: AuthProps) {
-  const { isLogin } = props;
+  const [userData, setUserData] = useState({
+    fullname: '',
+    email: '',
+    name: '',
+    picture: '',
+  });
+
+  const getUser = useCallback(async () => {
+    const data = await getUserData();
+    setUserData(data);
+  }, []);
+
+  useEffect(() => {
+    getUser();
+
+    if (Cookies && Cookies.get('token')) {
+      setIsLogin(true);
+    }
+  }, [getUser]);
 
   if (!isLogin) {
     return (
       <>
-        <Button
-          as={'a'}
-          fontSize={'sm'}
-          fontWeight={400}
-          variant={'link'}
-          href={'#'}
-        >
-          Sign In
-        </Button>
-        <Button
-          display={{ base: 'none', md: 'inline-flex' }}
-          fontSize={'sm'}
-          fontWeight={600}
-          color={'white'}
-          bg={'pink.400'}
-          _hover={{
-            bg: 'pink.300',
-          }}
-        >
-          Sign Up
-        </Button>
+        <Link href={'/signin'}>
+          <Button
+            as={'a'}
+            fontSize={'sm'}
+            fontWeight={400}
+            variant={'link'}
+            href={'/signin'}
+          >
+            Sign In
+          </Button>
+        </Link>
+        <Link href={'/signup'}>
+          <Button
+            as={'a'}
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'sm'}
+            fontWeight={600}
+            color={'white'}
+            bg={'pink.400'}
+            _hover={{
+              bg: 'pink.300',
+            }}
+          >
+            Sign Up
+          </Button>
+        </Link>
       </>
     );
   }
@@ -61,7 +86,11 @@ export default function Auth(props: AuthProps) {
           />
         </MenuButton>
         <MenuList>
-          <MenuItem>Link 1</MenuItem>
+          <MenuItem>
+            <Link href={'/dashboard'}>
+              <a>{userData.fullname}</a>
+            </Link>
+          </MenuItem>
           <MenuItem>Link 2</MenuItem>
           <MenuDivider />
           <MenuItem>Link 3</MenuItem>

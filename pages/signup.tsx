@@ -1,19 +1,46 @@
 import React, { useState } from 'react';
 import Input from '../components/atoms/Input';
 import Button from '../components/atoms/Button';
+import { setSignup } from '../services/auth';
 import { useRouter } from 'next/router';
+import { useToast } from '@chakra-ui/react';
 
 export default function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const toast = useToast();
 
   const router = useRouter();
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(name, email, password);
-    router.push('/signin');
+    const data = {
+      fullname: name,
+      email,
+      password,
+    };
+
+    try {
+      await setSignup(data);
+      toast({
+        title: 'Signup Success',
+        description: 'Akun berhasil dibuat',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      });
+      router.push('/success');
+    } catch (error: any) {
+      console.log(error);
+      toast({
+        title: 'Signup Error',
+        description: `${error.response.data.message}`,
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      });
+    }
   };
 
   return (

@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -14,12 +13,6 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
-  Menu,
-  MenuButton,
-  Avatar,
-  MenuList,
-  MenuItem,
-  MenuDivider,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -79,7 +72,7 @@ export default function Navbar() {
           direction={'row'}
           spacing={6}
         >
-          <Auth isLogin />
+          <Auth />
         </Stack>
       </Flex>
 
