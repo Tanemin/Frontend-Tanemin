@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../components/atoms/Input';
 import Button from '../components/atoms/Button';
+import { setSignup } from '../services/auth';
 import { useRouter } from 'next/router';
 
 export default function SignUp() {
@@ -10,9 +11,17 @@ export default function SignUp() {
 
   const router = useRouter();
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(name, email, password);
+    const data = {
+      fullname: name,
+      email,
+      password,
+    };
+
+    console.log(data);
+    await setSignup(data);
+
     router.push('/signin');
   };
 

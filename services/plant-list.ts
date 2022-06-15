@@ -23,3 +23,13 @@ export const getDetailPlant = async (id: string) => {
     console.log(result)
     return result
 }
+
+export const getTopPlant = async () => {
+    const response = await axios.get(`${ROOT_API}/${API_VERSION}/plants/topPlants`, {
+        headers: { "Access-Control-Allow-Origin": "*" }
+    });
+
+    const { result } = response.data
+    console.log(result)
+    return result
+}
