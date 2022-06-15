@@ -1,11 +1,44 @@
+import { useToast } from '@chakra-ui/react';
 import Link from 'next/link';
-import React, { useRef, useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import Button from '../components/atoms/Button';
 import Input from '../components/atoms/Input';
+import { setLogin } from '../services/auth';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
+  const toast = useToast();
+
+  const onSubmitHandler = async (event: any) => {
+    event.preventDefault();
+    const data = {
+      email,
+      password,
+    };
+    console.log(data);
+
+    try {
+      await setLogin(data);
+      toast({
+        title: 'Login Success',
+        description: 'Login Berhasil',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      });
+      router.push('/');
+    } catch (error: any) {
+      toast({
+        title: `Error ${error.response.status}`,
+        description: `Password yang anda masukan salah atau mungkin tidak terdaftar`,
+        status: 'error',
+        isClosable: true,
+      });
+    }
+  };
   return (
     <div className="login-container">
       <div className="text-hero">
@@ -25,7 +58,7 @@ export default function SignIn() {
         </div>
       </div>
       <div className="form">
-        <form>
+        <form onSubmit={onSubmitHandler}>
           <Input
             value={email}
             changeInput={(e) => setEmail(e.target.value)}
