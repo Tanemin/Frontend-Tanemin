@@ -12,15 +12,14 @@ import Cookies from 'js-cookie';
 import Link from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
 import { getUserData } from '../../../services/auth';
+import { useRouter } from 'next/router';
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(false);
+  const router = useRouter();
 
   const [userData, setUserData] = useState({
     fullname: '',
-    email: '',
-    name: '',
-    picture: '',
   });
 
   const getUser = useCallback(async () => {
@@ -35,6 +34,12 @@ export default function Auth() {
       setIsLogin(true);
     }
   }, [getUser]);
+
+  const onLogout = () => {
+    Cookies.remove('token');
+    router.push('/');
+    setIsLogin(false);
+  };
 
   if (!isLogin) {
     return (
@@ -93,7 +98,7 @@ export default function Auth() {
           </MenuItem>
           <MenuItem>Link 2</MenuItem>
           <MenuDivider />
-          <MenuItem>Link 3</MenuItem>
+          <MenuItem onClick={onLogout}>Logout</MenuItem>
         </MenuList>
       </Menu>
     </>
