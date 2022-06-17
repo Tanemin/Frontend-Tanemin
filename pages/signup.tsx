@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Input from '../components/atoms/Input';
-import Button from '../components/atoms/Button';
 import { setSignup } from '../services/auth';
 import { useRouter } from 'next/router';
-import { useToast } from '@chakra-ui/react';
+import { useToast, Button } from '@chakra-ui/react';
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 
 export default function SignUp() {
   const [name, setName] = useState('');
@@ -73,11 +73,25 @@ export default function SignUp() {
           value={password}
           changeInput={(e: any) => setPassword(e.target.value)}
         />
-        <button className="secondary">Sign In</button>{' '}
+        <button className="secondary">Sign Up</button>{' '}
       </form>
       <p className="text-or2">or continue with </p>
-      <Button value="Sign up with Google" assets="google.svg" />
-      <Button value="Sign up with Facebook" assets="fb.svg" />
+      <Button 
+        colorScheme='twitter' 
+        size='md'
+        width={314}
+        height={50} 
+        leftIcon={< FaGoogle />}>
+        SignUp with Google
+      </Button> <br />
+      <Button 
+        colorScheme='facebook'
+        size='md'
+        width={314}
+        height={50} 
+        leftIcon={<FaFacebook />}>
+        SignUp with Facebook
+      </Button>
     </div>
   );
 }
