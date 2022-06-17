@@ -15,14 +15,17 @@ import '../styles/globals.css';
 
 import '../styles/responsive.css';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from '../utils/stripe/stripe';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider>
-        <Component {...pageProps} />
+        <Elements stripe={stripePromise}>
+          <Component {...pageProps} />
+        </Elements>
       </ChakraProvider>
     </>
   );
