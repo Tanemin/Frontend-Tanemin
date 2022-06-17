@@ -1,0 +1,51 @@
+.member-plant-header {
+    display: flex;
+    gap: 16px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px 24px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+.member-plant-header > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.member-plant-title {
+    font-weight: 700;
+    font-size: 44px;
+}
+
+.member-plant-type {
+    display: flex;
+}
+
+.member-plant-type > p {
+    margin-right: 8px;
+}
+
+.member-plant-tags {
+    display: flex;
+}
+
+.member-plant-tags > p {
+    margin-right: 8px;
+}
+
+.member-progress {
+    margin-bottom: 16px;
+}
+
+.member-progress > p {
+    font-weight: 600;
+    font-size: larger;
+}
+
+.member-accordion-panel {
+    display: flex;
+    gap: 8px;
+}
