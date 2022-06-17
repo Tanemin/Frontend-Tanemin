@@ -16,7 +16,7 @@ export default function CardContainer(props: CardData) {
         href,
     } = props;
     return (
-        <Link href={`/detail/${href}`} passHref>
+        <Link href={href} passHref>
             <div className="card-content hover-pointer">
                 <div className="card-content__image">
                     <Image
