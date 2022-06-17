@@ -56,7 +56,10 @@ export default function DetailComponent() {
         <div className="detail-content">
           <DetailInformation description={dataItem.description} />
           <div className="detail-transaction">
-            <FormPayment pricePlants={dataItem.price} />
+            <FormPayment
+              plantName={dataItem.plantName}
+              pricePlants={dataItem.price}
+            />
             <Ingredients />
             <Tools />
           </div>

@@ -1,20 +1,23 @@
 import {
   Button,
   Center,
-  Container,
   HStack,
   Input,
   useNumberInput,
   VStack,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import Cookies from 'js-cookie';
+import React, { useEffect, useState } from 'react';
 import NumberFormat from 'react-number-format';
+import PaymentConfirm from '../../atoms/Modal';
 interface FormPaymentProps {
   pricePlants: number;
+  plantName: string;
 }
 
 export default function FormPayment(props: FormPaymentProps) {
-  const { pricePlants } = props;
+  const { pricePlants, plantName } = props;
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const {
     value,
@@ -30,6 +33,12 @@ export default function FormPayment(props: FormPaymentProps) {
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
   const input = getInputProps();
+
+  useEffect(() => {
+    if (Cookies && Cookies.get('token')) {
+      setIsDisabled(false);
+    }
+  }, []);
 
   return (
     <>
@@ -56,8 +65,13 @@ export default function FormPayment(props: FormPaymentProps) {
               </Button>
             </HStack>
           </Center>
-          <Button colorScheme={'orange'}>Buy Plant</Button>
-          <Button>Add to Cart</Button>
+          <PaymentConfirm
+            total={pricePlants}
+            plantName={plantName}
+            value={value}
+            isDisabled={isDisabled}
+          />
+          <Button disabled={isDisabled}>Add to Cart</Button>
         </VStack>
       </form>
     </>
