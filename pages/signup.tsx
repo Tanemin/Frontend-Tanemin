@@ -77,7 +77,7 @@ export default function SignUp() {
       </form>
       <p className="text-or2">or continue with </p>
       <Button 
-        colorScheme='twitter' 
+        colorScheme='gray' 
         size='md'
         width={314}
         height={50} 
@@ -85,7 +85,7 @@ export default function SignUp() {
         SignUp with Google
       </Button> <br />
       <Button 
-        colorScheme='facebook'
+        colorScheme='gray'
         size='md'
         width={314}
         height={50} 

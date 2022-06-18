@@ -79,12 +79,12 @@ export default function SignIn() {
         </form>
         <p className="text-or">or continue with </p>
           <Button 
-            colorScheme='facebook' 
+            colorScheme='gray' 
             leftIcon={< FaGoogle />}>
             SignIn with Google
           </Button>
           <Button 
-            colorScheme='twitter' 
+            colorScheme='gray' 
             leftIcon={<FaFacebook />}>
             SignIn with Facebook
           </Button>
