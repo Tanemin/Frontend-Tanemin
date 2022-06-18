@@ -9,7 +9,7 @@ export default function DetailInformation(props: DetailInformationProps) {
   return (
     <>
       <div className="detail-information">
-        <h3>About Course</h3>
+        <h3>About Plants</h3>
         <p>{description}</p>
         <h3>Gallery</h3>
         <div className="detail-galery">

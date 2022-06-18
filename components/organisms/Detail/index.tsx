@@ -7,7 +7,7 @@ import DetailInformation from './DetailInformation';
 import FormPayment from './FormPayment';
 import Header from './Header';
 import Ingredients from './Ingredients';
-import Tools from './Tools';
+import Duration from './Duration';
 
 export default function DetailComponent() {
   const { query, isReady } = useRouter();
@@ -60,8 +60,8 @@ export default function DetailComponent() {
               plantName={dataItem.plantName}
               pricePlants={dataItem.price}
             />
+            <Duration />
             <Ingredients />
-            <Tools />
           </div>
         </div>
         <Footer />
