@@ -19,12 +19,13 @@ export default function Hero() {
               rightIcon={<ArrowForwardIcon />}
               colorScheme="teal"
               variant="solid"
+              my={'2'}
             >
               Jelajahi
             </Button>
           </div>
           <div className="landing_image">
-            <Image src="/assets/mainPict.png" alt="" />
+            <Image src="/assets/pic.png" alt="" />
           </div>
         </div>
       </section>

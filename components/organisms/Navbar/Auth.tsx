@@ -49,7 +49,7 @@ export default function Auth() {
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
-            variant={'link'}
+            variant={'solid'}
             href={'/signin'}
           >
             Sign In
@@ -61,10 +61,9 @@ export default function Auth() {
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
+            colorScheme={'teal'}
             _hover={{
-              bg: 'pink.300',
+              bg: 'green.600',
             }}
           >
             Sign Up

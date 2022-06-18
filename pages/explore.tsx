@@ -48,7 +48,7 @@ export default function Explore() {
                 plantName={item.plantName}
                 author="SehatPedia"
                 imageUrl={item.imageCover}
-                href={item.id}
+                href={`/detail/${item.id}`}
               />
             </Skeleton>
           );
