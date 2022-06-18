@@ -6,7 +6,7 @@ export default function Ingredients() {
   return (
     <>
       <div className="ingredients">
-        <h3>Ingredients</h3>
+        <h3>Musim </h3>
         <ul className="transaction-additional">
           <DetailItems />
           <DetailItems />
