@@ -1,3 +1,4 @@
+import { Image } from '@chakra-ui/react';
 import React from 'react';
 
 export default function Footer() {
@@ -6,22 +7,22 @@ export default function Footer() {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <h1>🌼 Tanemin</h1>
+            <Image src="/icon/tanemin.png" alt="Tanemin Logo" height={'35px'} />
           </div>
           <div className="footer-features">
             <h2 className="footer-title">Features</h2>
             <div className="footer-list">
               <a href="" className="footer-item">
-                Wedding Foods
+                Productivity
               </a>
               <a href="" className="footer-item active">
-                Health and muscle
+                Healthy and care
               </a>
               <a href="" className="footer-item">
-                Office Food Daily
+                Daily Weather
               </a>
               <a href="" className="footer-item">
-                Happy kids
+                Gardening Tools
               </a>
             </div>
           </div>

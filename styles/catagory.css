@@ -45,13 +45,6 @@ header {
   color: #cfcfcf;
 }
 
-.item_list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 64px;
-}
-
 .card {
   display: flex;
   flex-direction: column;

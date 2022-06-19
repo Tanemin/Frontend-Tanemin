@@ -6,9 +6,9 @@ export default function Testimonial() {
     <section className="testimoni">
       <h2 className="featured_title">Testimoni</h2>
       <p className="testimoni_text">
-        Awalnya saya malu dengan mertua karena tidak bisa memasak, kini mereka
-        lebih suka makan malam di rumah demi menyantap masakan yang saya buat
-        sendiri
+        Sangat membantu saya untuk melakukan hal yang bermanfaat ketika libur
+        tiba, setelah berhari hari jenuh dengan pekerjaan menanam membuat saya
+        terasa lebih relax
       </p>
       <div className="testimoni_detail">
         <WrapItem>
