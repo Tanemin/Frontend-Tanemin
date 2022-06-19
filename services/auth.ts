@@ -28,6 +28,13 @@ export const setLogin = async (data: any) => {
     return result
 }
 
+export const setLoginGoogle = async (data: any) => {
+    console.log(data)
+
+    const { displayName, email, photoURL, uid } = data
+
+}
+
 
 export const getUserData = async () => {
     const token = Cookie.get('token')
