@@ -3,7 +3,7 @@ import Navbar from '../components/organisms/Navbar';
 import CardContainer from '../components/molecules/CardContainer';
 import { getPlants } from '../services/plant-list';
 import { PlantTypes } from '../services/data-types';
-import { Skeleton, useInterval } from '@chakra-ui/react';
+import { Container, Skeleton, Spinner, useInterval } from '@chakra-ui/react';
 import Footer from '../components/organisms/Footer';
 
 export default function Explore() {
@@ -14,6 +14,7 @@ export default function Explore() {
     try {
       const data = await getPlants();
       setPlantList(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -22,10 +23,6 @@ export default function Explore() {
   useEffect(() => {
     getPlantListItem();
   }, [getPlantListItem]);
-
-  useInterval(() => {
-    setIsLoading(false);
-  }, 1000);
 
   return (
     <>
@@ -40,17 +37,29 @@ export default function Explore() {
         </div>
       </header>
 
+      {isLoading && (
+        <Container centerContent>
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="green.500"
+            size="xl"
+            style={{ margin: '50%' }}
+          />
+        </Container>
+      )}
+
       <div className="content-container">
         {plantList.map((item: PlantTypes) => {
           return (
-            <Skeleton key={item.id} isLoaded={!isLoading}>
-              <CardContainer
-                plantName={item.plantName}
-                author="SehatPedia"
-                imageUrl={item.imageCover}
-                href={`/detail/${item.id}`}
-              />
-            </Skeleton>
+            <CardContainer
+              key={item.id}
+              plantName={item.plantName}
+              author="SehatPedia"
+              imageUrl={item.imageCover}
+              href={`/detail/${item.id}`}
+            />
           );
         })}
       </div>
