@@ -1,31 +1,25 @@
 import React from 'react';
 import Bill from '../components/atoms/card';
+import { Button, Heading, Center, Box} from '@chakra-ui/react'
 
 export default function Checkout() {
   return (
-    <div className="iphone">
-        <header className="header">
-          <h1>Checkout</h1>
-        </header>
-      
+    <Box maxW='sm' borderWidth='2px' borderRadius='lg' padding={20}>
+       <Heading> <Center> Checkout </Center> </Heading> <br/>
         <form className="form" method="POST">
           <div>
-            <h2>Address</h2>
-      
-            <div className="card">
-              <address>
+          <Heading as='h2' size='sm'>
+            Address
+          </Heading>
+            <Box bg='green.400' w='100%' borderRadius='lg' p={4} color='white'>
                 Adam Johnson<br />
-                403 Oakland Ave Street, A city, Florida, 32104,<br />
+                403 Oakland Ave Street, A city, Florida, 32104, <br/>
                 United States of America
-              </address>
-            </div>
+            </Box>
           </div>
-        
             <Bill />
-          <div>
-            <button className="button button--full" type="submit">Buy Now</button>
-          </div>
+            <Button colorScheme='green'>Buy Now</Button>
         </form>
-      </div>
+      </Box>
   )
 }

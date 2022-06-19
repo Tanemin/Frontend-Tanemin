@@ -1,11 +1,12 @@
 import React from 'react';
-import { Image } from '@chakra-ui/react';
+import { Image, Heading } from '@chakra-ui/react';
 
 export default function Bill() {
   return (
     <div>
-    <h2>Shopping Bill</h2>
-
+       <Heading as='h2' size='sm'>
+          Shoping Bill 
+        </Heading>
     <table>
       <tbody>
       <Image 
