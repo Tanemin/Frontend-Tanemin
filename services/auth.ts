@@ -11,7 +11,6 @@ export const setSignup = async (data: any) => {
     );
     const { result } = response.data
 
-    console.log(result)
     return result
 }
 
@@ -20,9 +19,10 @@ export const setLogin = async (data: any) => {
         data
     );
 
+    console.log(response)
+
     const { result, token } = response.data
     const tokenBase64 = Buffer.from(token).toString('base64')
-    console.log(tokenBase64)
     Cookie.set('token', tokenBase64, { expires: 2 })
 
     return result

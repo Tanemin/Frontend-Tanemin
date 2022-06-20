@@ -1,44 +1,38 @@
-import { Image } from '@chakra-ui/react';
 import React from 'react';
+import ImageGallery from './ImageGallery';
+import Review from './ReviewCard/Review';
 interface DetailInformationProps {
   description: string;
+  reviews: string[];
+  imagesSrc: string[];
 }
 
 export default function DetailInformation(props: DetailInformationProps) {
-  const { description } = props;
+  const { description, reviews, imagesSrc } = props;
+  console.log(reviews);
   return (
     <>
       <div className="detail-information">
-        <h3>About Plants</h3>
+        <h3>Deskripsi Tanaman</h3>
         <p>{description}</p>
-        <h3>Gallery</h3>
+        <h3>Galeri</h3>
         <div className="detail-galery">
-          <Image src="/assets/mainPoster.png" alt="Cooking master" />
-          <Image src="/assets/mainPoster.png" alt="Cooking master" />
+          {imagesSrc.map((images: any) => {
+            return <ImageGallery imagesSrc={images} key={images} />;
+          })}
         </div>
         <br />
-        <h3>Reviews</h3>
-        <ul className="detail-review">
-          <li className="item-review">
-            <div className="review-account">
-              <div className="review-photo">
-                <Image src="/assets/mainPoster.png" alt="" />
-              </div>
-              <div className="account-detail">
-                <h4>Fauzi Kurniawan</h4>
-                <p className="label">Vegan Chef</p>
-                <p>⭐️⭐️⭐️⭐️⭐️ | 4.8/5</p>
-              </div>
-            </div>
-            <p>
-              I learned a lot in this course, however, towards the middle of the
-              course, it feels a bit rushed. It took a long time to wrap my head
-              around functions and classes before being able to complete the
-              Milestone projects. Had to go through various external sources
-              before coming back to this course.
-            </p>
-          </li>
-        </ul>
+        {reviews.map((review: any) => {
+          return (
+            <Review
+              key={review.id}
+              review={review.review}
+              name={review.user.fullname}
+              rating={0}
+              photo={review.user.photo}
+            />
+          );
+        })}
       </div>
     </>
   );

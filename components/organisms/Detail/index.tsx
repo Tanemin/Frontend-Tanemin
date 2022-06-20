@@ -6,8 +6,8 @@ import Navbar from '../Navbar';
 import DetailInformation from './DetailInformation';
 import FormPayment from './FormPayment';
 import Header from './Header';
-import Ingredients from './Ingredients';
 import Duration from './Duration';
+import Seasons from './Seasons';
 
 export default function DetailComponent() {
   const { query, isReady } = useRouter();
@@ -17,13 +17,16 @@ export default function DetailComponent() {
     plantName: '',
     imageCover: '',
     description: '',
-    reviews: '',
+    reviews: [],
     price: 0,
-    imageGallery: [],
+    imageGalery: [],
     ratingsQuantity: 0,
     type: [],
     difficulty: '',
+    season: [],
   });
+
+  console.log(dataItem.reviews);
 
   const getPlantDetailAPI = useCallback(
     async (id: string) => {
@@ -54,14 +57,19 @@ export default function DetailComponent() {
           imgUrl={dataItem.imageCover}
         />
         <div className="detail-content">
-          <DetailInformation description={dataItem.description} />
+          <DetailInformation
+            imagesSrc={dataItem.imageGalery}
+            description={dataItem.description}
+            reviews={dataItem.reviews}
+          />
           <div className="detail-transaction">
             <FormPayment
+              id={dataItem.id}
               plantName={dataItem.plantName}
               pricePlants={dataItem.price}
             />
             <Duration />
-            <Ingredients />
+            <Seasons seasons={dataItem.season} />
           </div>
         </div>
         <Footer />
