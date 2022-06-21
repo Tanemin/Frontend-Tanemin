@@ -1,37 +1,36 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
-import MemberLayout from "../../../components/organisms/Layout/MemberLayout";
-import PlantDetail from "../../../components/organisms/MemberArea/Plants/PlantDetail";
-import Schedule from "../../../components/organisms/MemberArea/Plants/Schedule";
-import { getDetailPlant } from "../../../services/plant-list";
+import Link from 'next/link';
+import React from 'react';
+import SimpleSidebar from '../../../components/organisms/Layout/Sidebar';
+import PlantDetail from '../../../components/organisms/MemberArea/Plants/PlantDetail';
+import Schedule from '../../../components/organisms/MemberArea/Plants/Schedule';
+import { getDetailPlant } from '../../../services/plant-list';
 
 interface Props {
-    plant: any;
+  plant: any;
 }
 
 const PlantDetailPage = ({ plant }: Props) => {
-    return (
-        <MemberLayout>
-            <div>
-                <Link href={"/member/plants"}>{`< Back `}</Link>
-                <PlantDetail plant={plant} />
-                <Schedule />
-            </div>
-        </MemberLayout>
-    );
+  return (
+    <SimpleSidebar>
+      <div>
+        <Link href={'/member/plants'}>{`< Back `}</Link>
+        <PlantDetail plant={plant} />
+        <Schedule />
+      </div>
+    </SimpleSidebar>
+  );
 };
 
 export const getServerSideProps = async (context: any) => {
-    const { id } = context.query;
+  const { id } = context.query;
 
-    const plant = await getDetailPlant(id);
+  const plant = await getDetailPlant(id);
 
-    return {
-        props: {
-            plant,
-        },
-    };
+  return {
+    props: {
+      plant,
+    },
+  };
 };
 
 export default PlantDetailPage;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Tag } from '@chakra-ui/react';
+import { Box, Image, Tag } from '@chakra-ui/react';
 
 interface Props {
   plant: any;
@@ -9,12 +9,21 @@ const PlantDetail = ({ plant }: Props) => {
   const { imageCover, plantName, type, tags } = plant;
   return (
     <div className="member-plant-header">
-      <Image
-        src={imageCover}
-        fallbackSrc="https://via.placeholder.com/150"
-        alt="Cooking master"
-        maxHeight={200}
-      />
+      <Box
+        width={'50%'}
+        overflow={'hidden'}
+        display={'flex'}
+        alignItems="center"
+        justifyContent={'center'}
+      >
+        <Image
+          src={imageCover}
+          fallbackSrc="https://via.placeholder.com/150"
+          alt="Cooking master"
+          width={'500px'}
+          objectFit={'cover'}
+        />
+      </Box>
       <div>
         <h3 className="member-plant-title">{plantName}</h3>
         <div className="member-plant-detail">

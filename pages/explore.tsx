@@ -30,11 +30,6 @@ export default function Explore() {
       <header className="heading">
         <h1 className="explore-title">Beverages Recommendations</h1>
         <h3 className="explore-description">Available 12,309 course</h3>
-
-        <div className="searchbar">
-          <input type="text" placeholder="Search by name or receipt" />
-          <i className="fa fa-search" aria-hidden="true"></i>
-        </div>
       </header>
 
       {isLoading && (

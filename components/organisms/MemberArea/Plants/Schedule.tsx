@@ -8,6 +8,7 @@ import {
   Box,
   Checkbox,
   Progress,
+  Text,
 } from '@chakra-ui/react';
 
 const Schedule = () => {
@@ -46,10 +47,14 @@ const Schedule = () => {
 
   return (
     <>
-      <div className="member-progress">
-        <p>Progress</p>
-        <Progress transition={'ease-in'} value={progress} />
-      </div>
+      <Box>
+        <div className="member-progress">
+          <Text fontSize={'2xl'} marginTop="2">
+            Progress : {progress.toFixed()}%
+          </Text>
+          <Progress colorScheme={'green'} height={30} value={progress} />
+        </div>
+      </Box>
       <Accordion allowMultiple>
         {data.map((item, itemID) => (
           <AccordionItem key={item.id}>
@@ -57,14 +62,16 @@ const Schedule = () => {
               <AccordionButton>
                 <Box flex="1" textAlign="left">
                   <Checkbox
+                    colorScheme={'teal'}
                     isChecked={item.items.every((item) => item.status)}
+                    isDisabled={item.items.every((item) => item.status)}
                     isIndeterminate={
                       item.items.some((item) => item.status) &&
                       !item.items.every((item) => item.status)
                     }
                     onChange={() => checkAllData(itemID)}
                   >
-                    {item.title}
+                    <Text fontSize={'large'}>{item.title}</Text>
                   </Checkbox>
                 </Box>
                 <AccordionIcon />
@@ -77,7 +84,7 @@ const Schedule = () => {
                   onChange={() => checkData(itemID, scheduleID)}
                   key={scheduleID}
                 >
-                  {item.label}
+                  <Text fontSize={'md'}>{item.label}</Text>
                 </Checkbox>
               ))}
             </AccordionPanel>

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import Input from '../components/atoms/Input';
 import { setLogin } from '../services/auth';
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaFacebook, FaGoogle } from 'react-icons/fa';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -78,23 +78,13 @@ export default function SignIn() {
           <button className="btn secondary">Sign In</button>
         </form>
         <p className="text-or">or continue with </p>
-          <Button 
-            colorScheme='gray' 
-            leftIcon={< FaGoogle />}>
-            SignIn with Google
-          </Button>
-          <Button 
-            colorScheme='gray' 
-            leftIcon={<FaFacebook />}>
-            SignIn with Facebook
-          </Button>
+        <Button colorScheme="gray" leftIcon={<FaGoogle />}>
+          SignIn with Google
+        </Button>
+        <Button colorScheme="gray" leftIcon={<FaFacebook />}>
+          SignIn with Facebook
+        </Button>
       </div>
     </div>
   );
 }
-
-
-
- 
-
-

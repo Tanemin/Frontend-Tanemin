@@ -14,11 +14,11 @@ import {
   Center,
 } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';
-import MemberLayout from '../../components/organisms/Layout/MemberLayout';
+import SimpleSidebar from '../../components/organisms/Layout/Sidebar';
 
 export default function Edit() {
   return (
-    <MemberLayout>
+    <SimpleSidebar>
       <Flex
         minH={'100vh'}
         align={'center'}
@@ -107,6 +107,6 @@ export default function Edit() {
           </Stack>
         </Stack>
       </Flex>
-    </MemberLayout>
+    </SimpleSidebar>
   );
 }
