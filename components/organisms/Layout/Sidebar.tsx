@@ -18,12 +18,14 @@ import {
   FiHome,
   FiTrendingUp,
   FiCompass,
-  FiStar,
   FiSettings,
   FiMenu,
+  FiShoppingCart,
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
+import { EarthOutline } from 'react-ionicons';
+import SidebarFooter from './SidebarFooter';
 
 interface LinkItemProps {
   name: string;
@@ -32,39 +34,42 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome, href: '/member/' },
-  { name: 'Plants', icon: FiTrendingUp, href: '/member/plants' },
-  { name: 'Explore', icon: FiCompass, href: '/member/explore' },
-  { name: 'Favourites', icon: FiStar, href: '/member/favourites' },
+  { name: 'Plants', icon: EarthOutline, href: '/member/plants' },
+  { name: 'Explore', icon: FiCompass, href: '/explore' },
+  { name: 'Cart', icon: FiShoppingCart, href: '/member/cart' },
   { name: 'Settings', icon: FiSettings, href: '/member/edit' },
 ];
 
 export default function SimpleSidebar({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-      <SidebarContent
-        onClose={() => onClose}
-        display={{ base: 'none', md: 'block' }}
-      />
-      <Drawer
-        autoFocus={false}
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        returnFocusOnClose={false}
-        onOverlayClick={onClose}
-        size="full"
-      >
-        <DrawerContent>
-          <SidebarContent onClose={onClose} />
-        </DrawerContent>
-      </Drawer>
-      {/* mobilenav */}
-      <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
+    <>
+      <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+        <SidebarContent
+          onClose={() => onClose}
+          display={{ base: 'none', md: 'block' }}
+        />
+        <Drawer
+          autoFocus={false}
+          isOpen={isOpen}
+          placement="left"
+          onClose={onClose}
+          returnFocusOnClose={false}
+          onOverlayClick={onClose}
+          size="full"
+        >
+          <DrawerContent>
+            <SidebarContent onClose={onClose} />
+          </DrawerContent>
+        </Drawer>
+        {/* mobilenav */}
+        <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
+        <Box ml={{ base: 0, md: 60 }} p="4">
+          {children}
+        </Box>
       </Box>
-    </Box>
+      <SidebarFooter />
+    </>
   );
 }
 
@@ -118,7 +123,7 @@ const NavItem = ({ href, icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: 'cyan.400',
+          bg: 'green.700',
           color: 'white',
         }}
         {...rest}

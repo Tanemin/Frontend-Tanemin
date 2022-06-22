@@ -1,10 +1,11 @@
 import { useToast, Button } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../components/atoms/Input';
 import { setLogin } from '../services/auth';
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
+import Cookies from 'js-cookie';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -39,6 +40,13 @@ export default function SignIn() {
       });
     }
   };
+
+  useEffect(() => {
+    if (Cookies && Cookies.get('token')) {
+      router.push('/');
+    }
+  }, [router]);
+
   return (
     <div className="login-container">
       <div className="text-hero">

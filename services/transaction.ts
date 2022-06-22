@@ -11,7 +11,6 @@ export const createTransaction = async (props: postPlant) => {
         return null
     }
     const tokenBase64 = Buffer.from(token as string, 'base64').toString('ascii')
-    console.log(tokenBase64)
     const { id, ammount } = props
     const response = await axios.post(`${ROOT_API}/${API_VERSION}/plants/${id}/transactions/`,
         {
@@ -25,5 +24,21 @@ export const createTransaction = async (props: postPlant) => {
 
     const { result } = response.data
 
+    return result
+}
+
+export const getTransactionById = async () => {
+    const token = Cookies.get('token')
+    if (!token) {
+        return null
+    }
+    const tokenBase64 = Buffer.from(token as string, 'base64').toString('ascii')
+    const resposne = await axios.get(`${ROOT_API}/${API_VERSION}/users/profile/transactions`,
+        {
+            headers: {
+                Authorization: `Bearer ${tokenBase64}`
+            }
+        })
+    const { result } = resposne.data
     return result
 }
