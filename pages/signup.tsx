@@ -3,7 +3,7 @@ import Input from '../components/atoms/Input';
 import { setSignup } from '../services/auth';
 import { useRouter } from 'next/router';
 import { useToast, Button } from '@chakra-ui/react';
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle } from 'react-icons/fa';
 import {
   Flex,
   Heading,
@@ -12,7 +12,6 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
-
 
 export default function SignUp() {
   const [name, setName] = useState('');
@@ -55,29 +54,27 @@ export default function SignUp() {
   return (
     <div className="register">
       <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-            <Text as={'span'}>
-            Let's
-            </Text>{' '}
-            <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: useBreakpointValue({ base: '20%', md: '30%' }),
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'green.400',
-                zIndex: -1,
-              }}>
-              Start New
-            </Text>{' '}
-            <Text as={'span'}>
-            Journey
-            </Text>{' '}
-          </Heading> <br/>
-      <form action="" onSubmit={onSubmit} className="regis">
+        <Text as={'span'}>Let's</Text>{' '}
+        <Text
+          as={'span'}
+          position={'relative'}
+          _after={{
+            content: "''",
+            width: 'full',
+            height: useBreakpointValue({ base: '20%', md: '30%' }),
+            position: 'absolute',
+            bottom: 1,
+            left: 0,
+            bg: 'green.400',
+            zIndex: -1,
+          }}
+        >
+          Start New
+        </Text>{' '}
+        <Text as={'span'}>Journey</Text>{' '}
+      </Heading>{' '}
+      <br />
+      <form className="regis">
         <Input
           name="fullname"
           field="Full Name"
@@ -102,24 +99,27 @@ export default function SignUp() {
           value={password}
           changeInput={(e: any) => setPassword(e.target.value)}
         />
-         <Button 
-          colorScheme='green' 
-          size='md'
+        <Button
+          onClick={onSubmit}
+          colorScheme="green"
+          size="md"
           width={314}
-          height={50}>
+          height={50}
+        >
           SignUp
-        </Button>{' '} <br/>
-        <p className="text-or2">or continue with </p> <br/>
-        <Button 
-          colorScheme='gray' 
-          size='md'
+        </Button>
+        <br />
+        <p className="text-or2">or continue with </p> <br />
+        <Button
+          colorScheme="gray"
+          size="md"
           width={314}
-          height={50} 
-          leftIcon={< FaGoogle />}>
+          height={50}
+          leftIcon={<FaGoogle />}
+        >
           SignUp with Google
         </Button>
-      </form> 
-      
+      </form>
     </div>
   );
 }

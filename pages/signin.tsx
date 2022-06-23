@@ -1,5 +1,4 @@
-import { useToast, Button, Center } from '@chakra-ui/react';
-import Link from 'next/link';
+import { useToast, Button } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import Input from '../components/atoms/Input';
@@ -64,15 +63,14 @@ export default function SignIn() {
                 left: 0,
                 bg: 'green.400',
                 zIndex: -1,
-              }}>
+              }}
+            >
               Sign
             </Text>{' '}
             <Text as={'span'}>
-            In to Learn <br />
+              In to Learn <br />
             </Text>{' '}
-            <Text as={'span'}>
-            How to
-            </Text>{' '}
+            <Text as={'span'}>How to</Text>{' '}
             <Text
               as={'span'}
               position={'relative'}
@@ -85,26 +83,28 @@ export default function SignIn() {
                 left: 0,
                 bg: 'green.400',
                 zIndex: -1,
-              }}>
+              }}
+            >
               Plan
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
             When you are attracted by a plant grown by yourself, happiness is
-            priceless. <br/>
-            If you have no account please{' '} <br />
-            <Box as='a' color='green.400' href='/signup' fontWeight='bold'>
-            register new account
+            priceless. <br />
+            If you have no account please <br />
+            <Box as="a" color="green.400" href="/signup" fontWeight="bold">
+              register new account
             </Box>
           </Text>
         </Stack>
       </Flex>
-        <Flex  
-          flex={1}
-          justify={'center'}
-          align={'center'}
-          position={'relative'}
-          w={'full'} >
+      <Flex
+        flex={1}
+        justify={'center'}
+        align={'center'}
+        position={'relative'}
+        w={'full'}
+      >
         <form onSubmit={onSubmitHandler}>
           <Input
             value={email}
@@ -122,25 +122,27 @@ export default function SignIn() {
             field="Password"
             type="password"
           />
-          <Button 
-            colorScheme='green' 
-            size='md'
+          <Button
+            onClick={onSubmitHandler}
+            colorScheme="green"
+            size="md"
             width={314}
-            height={50}>
+            height={50}
+          >
             SignIn
-          </Button> <br/>
-          <p className="text-or">or continue with </p> <br/>
-        <Button 
-          colorScheme='gray' 
-          size='md'
-          width={314}
-          height={50}
-          leftIcon={< FaGoogle />}>
-          SignUp with Google
-        </Button> 
-
-        </form> 
-        
+          </Button>
+          <br />
+          <p className="text-or">or continue with </p> <br />
+          <Button
+            colorScheme="gray"
+            size="md"
+            width={314}
+            height={50}
+            leftIcon={<FaGoogle />}
+          >
+            SignUp with Google
+          </Button>
+        </form>
       </Flex>
     </Stack>
   );
