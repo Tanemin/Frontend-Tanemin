@@ -1,11 +1,18 @@
-import { useToast, Button } from '@chakra-ui/react';
+import { useToast, Button, Center } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Input from '../components/atoms/Input';
 import { setLogin } from '../services/auth';
-import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import Cookies from 'js-cookie';
+import { FaGoogle } from 'react-icons/fa';
+import {
+  Flex,
+  Heading,
+  Box,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -40,32 +47,64 @@ export default function SignIn() {
       });
     }
   };
-
-  useEffect(() => {
-    if (Cookies && Cookies.get('token')) {
-      router.push('/');
-    }
-  }, [router]);
-
   return (
-    <div className="login-container">
-      <div className="text-hero">
-        <h1>
-          <span className="underline">Sign</span>In to Learn <br />
-          How to <span className="underline">Plant</span>
-        </h1>
-        <p>
-          When you are attracted by a plant grown by yourself, happiness is
-          priceless.
-        </p>
-        <div className="link">
-          If you have no account please <br />
-          <Link href="/signup">
-            <a>register new account</a>
-          </Link>
-        </div>
-      </div>
-      <div className="form">
+    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+        <Stack spacing={6} w={'full'} maxW={'lg'}>
+          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                height: useBreakpointValue({ base: '20%', md: '30%' }),
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'green.400',
+                zIndex: -1,
+              }}>
+              Sign
+            </Text>{' '}
+            <Text as={'span'}>
+            In to Learn <br />
+            </Text>{' '}
+            <Text as={'span'}>
+            How to
+            </Text>{' '}
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                height: useBreakpointValue({ base: '20%', md: '30%' }),
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'green.400',
+                zIndex: -1,
+              }}>
+              Plan
+            </Text>{' '}
+          </Heading>
+          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+            When you are attracted by a plant grown by yourself, happiness is
+            priceless. <br/>
+            If you have no account please{' '} <br />
+            <Box as='a' color='green.400' href='/signup' fontWeight='bold'>
+            register new account
+            </Box>
+          </Text>
+        </Stack>
+      </Flex>
+        <Flex  
+          flex={1}
+          justify={'center'}
+          align={'center'}
+          position={'relative'}
+          w={'full'} >
         <form onSubmit={onSubmitHandler}>
           <Input
             value={email}
@@ -83,16 +122,26 @@ export default function SignIn() {
             field="Password"
             type="password"
           />
-          <button className="btn secondary">Sign In</button>
-        </form>
-        <p className="text-or">or continue with </p>
-        <Button colorScheme="gray" leftIcon={<FaGoogle />}>
-          SignIn with Google
-        </Button>
-        <Button colorScheme="gray" leftIcon={<FaFacebook />}>
-          SignIn with Facebook
-        </Button>
-      </div>
-    </div>
+          <Button 
+            colorScheme='green' 
+            size='md'
+            width={314}
+            height={50}>
+            SignIn
+          </Button> <br/>
+          <p className="text-or">or continue with </p> <br/>
+        <Button 
+          colorScheme='gray' 
+          size='md'
+          width={314}
+          height={50}
+          leftIcon={< FaGoogle />}>
+          SignUp with Google
+        </Button> 
+
+        </form> 
+        
+      </Flex>
+    </Stack>
   );
 }
