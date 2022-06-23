@@ -16,11 +16,11 @@ import {
 } from '@chakra-ui/react';
 import {
   FiHome,
-  FiTrendingUp,
   FiCompass,
   FiSettings,
   FiMenu,
   FiShoppingCart,
+  FiShoppingBag,
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
@@ -37,6 +37,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Plants', icon: EarthOutline, href: '/member/plants' },
   { name: 'Explore', icon: FiCompass, href: '/explore' },
   { name: 'Cart', icon: FiShoppingCart, href: '/member/cart' },
+  { name: 'Transactions', icon: FiShoppingBag, href: '/member/transactions' },
   { name: 'Settings', icon: FiSettings, href: '/member/edit' },
 ];
 
