@@ -78,9 +78,7 @@ h1.text-hero {
 .form {
   width: 320px;
   height: 455px;
-  left: 864px;
-  top: 200px;
-  padding-right: 100px;
+  margin-top: 20%;
 }
 
 .form-group {

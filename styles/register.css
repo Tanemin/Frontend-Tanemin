@@ -7,14 +7,6 @@
   align-items: center;
 }
 
-.register h1,
-.login-container h1 {
-  font-size: 46px;
-  font-weight: 700px;
-  color: #272042;
-  margin-bottom: 30px;
-}
-
 .control-label {
   font-style: normal;
   font-weight: 400px;
