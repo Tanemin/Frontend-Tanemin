@@ -1,6 +1,7 @@
 import { Stack, useColorModeValue } from '@chakra-ui/react';
 import MobileNavItem from './MobileNavItem';
 import { NAV_ITEMS } from './item';
+import Search from './Search';
 
 const MobileNav = () => {
   return (
@@ -12,6 +13,7 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <Search />
     </Stack>
   );
 };

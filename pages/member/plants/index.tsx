@@ -1,29 +1,29 @@
-import React from "react";
-import MemberLayout from "../../../components/organisms/Layout/MemberLayout";
-import { getTopPlant } from "../../../services/plant-list";
-import PlantList from "../../../components/organisms/MemberArea/Plants/PlantList";
+import React from 'react';
+import { getTopPlant } from '../../../services/plant-list';
+import PlantList from '../../../components/organisms/MemberArea/Plants/PlantList';
+import SimpleSidebar from '../../../components/organisms/Layout/Sidebar';
 
 interface Props {
-    plants: any;
+  plants: any;
 }
 
 const plants = ({ plants }: Props) => {
-    return (
-        <MemberLayout>
-            <PlantList plants={plants} />
-        </MemberLayout>
-    );
+  return (
+    <SimpleSidebar>
+      <PlantList plants={plants} />
+    </SimpleSidebar>
+  );
 };
 
 export const getServerSideProps = async () => {
-    const plants = await getTopPlant();
+  const plants = await getTopPlant();
 
-    console.log(plants);
-    return {
-        props: {
-            plants,
-        },
-    };
+  console.log(plants);
+  return {
+    props: {
+      plants,
+    },
+  };
 };
 
 export default plants;

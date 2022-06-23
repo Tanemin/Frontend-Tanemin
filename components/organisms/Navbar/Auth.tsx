@@ -7,6 +7,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Text,
 } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
 import Link from 'next/link';
@@ -87,11 +88,15 @@ export default function Auth() {
         </MenuButton>
         <MenuList>
           <MenuItem>
-            <Link href={'/dashboard'}>
-              <a>{userData.fullname}</a>
+            <Link href={'/member'}>
+              <Text>Profile</Text>
             </Link>
           </MenuItem>
-          <MenuItem>Link 2</MenuItem>
+          <MenuItem>
+            <Link href={'/member/edit'}>
+              <Text>Setting</Text>
+            </Link>
+          </MenuItem>
           <MenuDivider />
           <MenuItem onClick={onLogout}>Logout</MenuItem>
         </MenuList>

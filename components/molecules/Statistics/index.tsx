@@ -12,7 +12,7 @@ interface StatsCardProps {
   title: string;
   stat: string;
 }
-function StatsCard(props: StatsCardProps) {
+export function StatsCard(props: StatsCardProps) {
   const { title, stat } = props;
   return (
     <Stat

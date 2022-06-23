@@ -1,4 +1,5 @@
 export interface PlantTypes {
+    plant: any
     id: string,
     plantName: string,
     rating: number

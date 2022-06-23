@@ -16,6 +16,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useRouter } from 'next/router';
 
 import NumberFormat from 'react-number-format';
+import { createTransaction } from '../../../services/transaction';
 
 interface PaymentConfirmProps {
   total: number;
@@ -78,6 +79,10 @@ export default function PaymentConfirm(props: PaymentConfirmProps) {
             status: 'success',
             duration: 9000,
             isClosable: true,
+          });
+          createTransaction({
+            ammount: +value,
+            id: `${route.query.id}`,
           });
           route.push('/completed');
         }

@@ -3,7 +3,7 @@ import Navbar from '../components/organisms/Navbar';
 import CardContainer from '../components/molecules/CardContainer';
 import { getPlants } from '../services/plant-list';
 import { PlantTypes } from '../services/data-types';
-import { Container, Skeleton, Spinner, useInterval } from '@chakra-ui/react';
+import { Container, Spinner } from '@chakra-ui/react';
 import Footer from '../components/organisms/Footer';
 
 export default function Explore() {
@@ -28,13 +28,10 @@ export default function Explore() {
     <>
       <Navbar />
       <header className="heading">
-        <h1 className="explore-title">Beverages Recommendations</h1>
-        <h3 className="explore-description">Available 12,309 course</h3>
-
-        <div className="searchbar">
-          <input type="text" placeholder="Search by name or receipt" />
-          <i className="fa fa-search" aria-hidden="true"></i>
-        </div>
+        <h1 className="explore-title">Explore Tanaman</h1>
+        <h3 className="explore-description">
+          Tersedia untuk produktifitas kamu
+        </h3>
       </header>
 
       {isLoading && (

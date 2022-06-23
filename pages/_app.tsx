@@ -9,8 +9,9 @@ import '../styles/register.css';
 import '../styles/notFound.css';
 import '../styles/landingpage.css';
 import '../styles/member-page-styles/overview.css';
-import '../styles/member-page-styles/sidebar.css';
+// import '../styles/member-page-styles/sidebar.css';
 import '../styles/member-page-styles/utilities.css';
+import '../styles/member-page-styles/plant.css';
 // import '../styles/checkout.css';
 import '../styles/globals.css';
 
