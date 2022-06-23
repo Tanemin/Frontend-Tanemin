@@ -5,27 +5,15 @@ import {
   IconButton,
   Stack,
   Collapse,
-  Icon,
-  Link,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   Image,
-  Button,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  Input,
-  DrawerFooter,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Auth from './Auth';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
-import Search from './Search';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
