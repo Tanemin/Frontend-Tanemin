@@ -11,39 +11,55 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-const Schedule = () => {
+interface ScheduleProps {
+  id: string;
+}
+
+const Schedule = (props: ScheduleProps) => {
+  const { id } = props;
   const [data, setData] = useState(DUMMY_SCHEDULE);
   const [progress, setProgress] = useState(1.5);
 
   const checkData = (itemID: number, scheduleID: number) => {
+    const local = localStorage.getItem(id);
+    if (local) {
+      setData(JSON.parse(local));
+    }
     const newData = [...data];
     newData[itemID].items[scheduleID].status =
       !newData[itemID].items[scheduleID].status;
-
+    localStorage.setItem(id, JSON.stringify(newData));
     setData(newData);
   };
 
   const checkAllData = (itemID: number) => {
     const newData = [...data];
     newData[itemID].items.forEach((item) => (item.status = !item.status));
-
+    localStorage.setItem(id, JSON.stringify(newData));
     setData(newData);
   };
 
-  useEffect(() => {
-    let totalSchedule = 0;
-    let finishedSchedule = 0;
+  let totalSchedule = 0;
+  let finishedSchedule = 0;
 
-    data.forEach((item) => {
+  data.map((item) => {
+    if (item.items) {
       item.items.forEach((item) => {
         totalSchedule++;
         if (item.status) {
           finishedSchedule++;
         }
       });
-    });
+    }
+  });
+
+  useEffect(() => {
+    const local = localStorage.getItem(id);
+    if (local) {
+      setData(JSON.parse(local));
+    }
     setProgress((finishedSchedule / totalSchedule) * 100);
-  }, [data]);
+  }, [finishedSchedule, id, setProgress, totalSchedule]);
 
   return (
     <>
@@ -55,7 +71,7 @@ const Schedule = () => {
           <Progress colorScheme={'green'} height={30} value={progress} />
         </div>
       </Box>
-      <Accordion allowMultiple>
+      <Accordion allowToggle>
         {data.map((item, itemID) => (
           <AccordionItem key={item.id}>
             <h2>

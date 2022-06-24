@@ -22,10 +22,10 @@ export default function SearchItem(props: SearchItemProps) {
       {' '}
       <Container p={{ base: 5, md: 10 }}>
         <VStack spacing={8} w={{ base: 'auto', md: 'md' }}>
-          {plants.map((plant, index) => (
+          {plants.map((plant: any) => (
             <Stack
               width={'100%'}
-              key={index}
+              key={plant.id}
               direction="column"
               spacing={4}
               p={4}
@@ -41,8 +41,8 @@ export default function SearchItem(props: SearchItemProps) {
               }}
               rounded="lg"
             >
-              <HStack spacing={2} mb={1}>
-                {/* {article.tags.map((cat, index) => (
+              {/* <HStack spacing={2} mb={1}>
+                 {article.tags.map((cat, index) => (
                   <Tag
                     key={index}
                     colorScheme={useColorModeValue('blackAlpha', 'gray')}
@@ -50,8 +50,8 @@ export default function SearchItem(props: SearchItemProps) {
                   >
                     {cat}
                   </Tag>
-                ))} */}
-              </HStack>
+                ))} 
+              </HStack> */}
               <Box textAlign="left">
                 <Link
                   href={`/detail/${plant.id}`}

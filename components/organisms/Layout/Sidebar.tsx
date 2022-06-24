@@ -13,6 +13,7 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
+  Img,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -91,7 +92,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+          <Img src="/icon/tanemin.png" alt="Tanemin Logo" h={'50px'} />
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>

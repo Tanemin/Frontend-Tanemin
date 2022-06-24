@@ -6,7 +6,7 @@ interface LocationProps {
 }
 
 
-export const currentWeather = async (props: LocationProps) => {
+export const currentWeather = async () => {
     // const { lat, lng } = props
     const response = await axios.get(`https://api.ambeedata.com/weather/latest/by-lat-lng?lat=-6.356992&lng=106.8138496`,
         {
@@ -17,6 +17,5 @@ export const currentWeather = async (props: LocationProps) => {
         })
 
     const { data } = response
-    console.log(data)
-    return response
+    return data
 }

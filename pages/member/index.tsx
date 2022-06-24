@@ -2,6 +2,7 @@ import { SimpleGrid } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { StatsCard } from '../../components/molecules/Statistics';
 import SimpleSidebar from '../../components/organisms/Layout/Sidebar';
+import MemberHero from '../../components/organisms/MemberHero';
 import { getUserData } from '../../services/auth';
 
 export default function Index() {
@@ -25,6 +26,7 @@ export default function Index() {
   return (
     <>
       <SimpleSidebar>
+        <MemberHero />
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
           <StatsCard title={'Nama'} stat={currentUser.fullname} />
           <StatsCard
