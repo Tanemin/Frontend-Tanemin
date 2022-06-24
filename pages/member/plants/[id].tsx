@@ -10,12 +10,13 @@ interface Props {
 }
 
 const PlantDetailPage = ({ plant }: Props) => {
+  console.log(plant);
   return (
     <SimpleSidebar>
       <div>
         <Link href={'/member/plants'}>{`< Back `}</Link>
         <PlantDetail plant={plant} />
-        <Schedule />
+        <Schedule id={plant.id} />
       </div>
     </SimpleSidebar>
   );

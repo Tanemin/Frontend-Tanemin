@@ -1,16 +1,17 @@
 import React from 'react';
 import { Box, Image, Tag } from '@chakra-ui/react';
+import Seasons from '../../Detail/Seasons';
 
 interface Props {
   plant: any;
 }
 
 const PlantDetail = ({ plant }: Props) => {
-  const { imageCover, plantName, type, tags } = plant;
+  const { imageCover, plantName, type, tags, season } = plant;
   return (
     <div className="member-plant-header">
       <Box
-        width={'50%'}
+        maxHeight={'300px'}
         overflow={'hidden'}
         display={'flex'}
         alignItems="center"
@@ -22,6 +23,7 @@ const PlantDetail = ({ plant }: Props) => {
           alt="Cooking master"
           width={'500px'}
           objectFit={'cover'}
+          height={'100%'}
         />
       </Box>
       <div>
@@ -56,6 +58,7 @@ const PlantDetail = ({ plant }: Props) => {
             ))}
           </div>
         </div>
+        <Seasons seasons={season} />
       </div>
     </div>
   );
