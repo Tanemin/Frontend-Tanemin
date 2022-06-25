@@ -11,13 +11,15 @@ export default function Testimonial() {
         terasa lebih relax
       </p>
       <div className="testimoni_detail">
-        <WrapItem>
-          <Avatar
-            size={'xl'}
-            name="Dan Abrahmov"
-            src="https://bit.ly/dan-abramov"
-          />
-        </WrapItem>
+        <ul>
+          <WrapItem>
+            <Avatar
+              size={'xl'}
+              name="Dan Abrahmov"
+              src="https://bit.ly/dan-abramov"
+            />
+          </WrapItem>
+        </ul>
       </div>
     </section>
   );

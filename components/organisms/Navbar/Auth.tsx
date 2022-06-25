@@ -21,7 +21,7 @@ export default function Auth() {
 
   const [userData, setUserData] = useState({
     fullname: '',
-    avatar: 'https://bit.ly/broken-link',
+    avatar: '',
   });
 
   const getUser = useCallback(async () => {
