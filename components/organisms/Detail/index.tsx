@@ -24,6 +24,10 @@ export default function DetailComponent() {
     type: [],
     difficulty: '',
     season: [],
+    viewCount: 0,
+    sold: 0,
+    stock: 0,
+    store: [],
   });
 
   console.log(dataItem.reviews);
@@ -50,11 +54,15 @@ export default function DetailComponent() {
       <Navbar />
       <div className="detail-container">
         <Header
+          store={dataItem.store}
           difficulty={dataItem.difficulty}
           itemType={dataItem.type}
           itemName={dataItem.plantName}
           itemStar={dataItem.ratingsQuantity}
           imgUrl={dataItem.imageCover}
+          viewCount={dataItem.viewCount}
+          sold={dataItem.sold}
+          stock={dataItem.stock}
         />
         <div className="detail-content">
           <DetailInformation

@@ -1,4 +1,5 @@
 import {
+  Box,
   Image,
   Tab,
   TabList,
@@ -13,14 +14,44 @@ import Review from './Review';
 export default function TabListComponent() {
   return (
     <>
-      <Tabs isLazy isFitted colorScheme="green" className="w-100 fs-2 m-16">
-        <TabList className="fs-2">
+      <Tabs colorScheme="green" className="w-100 fs-2 m-16">
+        <TabList>
           <Tab>Tanaman</Tab>
           <Tab>Review</Tab>
           <Tab>About</Tab>
         </TabList>
-        <TabPanels>
+        <TabPanels style={{ minWidth: '100%' }}>
           <TabPanel>
+            <div className="card-content">
+              <div className="card-content__image">
+                <Image src="/assets/content-img.jpg" alt="food-image" />
+              </div>
+              <div className="card-content__info">
+                <p className="food-name">Avocado Muscle</p>
+                <p className="food-author">John Doe</p>
+                <div className="star-container"></div>
+              </div>
+            </div>
+            <div className="card-content">
+              <div className="card-content__image">
+                <Image src="/assets/content-img.jpg" alt="food-image" />
+              </div>
+              <div className="card-content__info">
+                <p className="food-name">Avocado Muscle</p>
+                <p className="food-author">John Doe</p>
+                <div className="star-container"></div>
+              </div>
+            </div>
+            <div className="card-content">
+              <div className="card-content__image">
+                <Image src="/assets/content-img.jpg" alt="food-image" />
+              </div>
+              <div className="card-content__info">
+                <p className="food-name">Avocado Muscle</p>
+                <p className="food-author">John Doe</p>
+                <div className="star-container"></div>
+              </div>
+            </div>
             <div className="card-content">
               <div className="card-content__image">
                 <Image src="/assets/content-img.jpg" alt="food-image" />

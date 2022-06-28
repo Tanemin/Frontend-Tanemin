@@ -12,6 +12,7 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import Cookies from 'js-cookie';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -46,6 +47,11 @@ export default function SignIn() {
       });
     }
   };
+
+  if (Cookies && Cookies.get('token')) {
+    router.back();
+  }
+
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>

@@ -12,6 +12,7 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import Cookies from 'js-cookie';
 
 export default function SignUp() {
   const [name, setName] = useState('');
@@ -50,6 +51,10 @@ export default function SignUp() {
       });
     }
   };
+
+  if (Cookies && Cookies.get('token')) {
+    router.back();
+  }
 
   return (
     <div className="register">

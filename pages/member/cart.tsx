@@ -31,6 +31,7 @@ export default function Cart() {
               plantName={item.plant.plantName}
               author="SehatPedia"
               imageUrl={item.imageCover}
+              price={item.plant.price}
               href={`/detail/${item.plant.id}`}
             />
           ))}

@@ -22,17 +22,7 @@ export default function DetailInformation(props: DetailInformationProps) {
           })}
         </div>
         <br />
-        {reviews.map((review: any) => {
-          return (
-            <Review
-              key={review.id}
-              review={review.review}
-              name={review.user.fullname}
-              rating={0}
-              photo={review.user.photo}
-            />
-          );
-        })}
+        <Review reviews={reviews} />
       </div>
     </>
   );

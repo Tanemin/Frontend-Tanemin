@@ -16,6 +16,8 @@ export default function Hero() {
               masa depan yang lebih indah
             </p>
             <Button
+              as={'a'}
+              href="/explore"
               rightIcon={<ArrowForwardIcon />}
               colorScheme="teal"
               variant="solid"

@@ -25,17 +25,17 @@ import Footer from '../components/organisms/Footer';
 const contactOptions = [
   {
     label: 'Address',
-    value: 'A108 Adam Street, NY 535022, USA',
+    value: 'Sindangpanon Street, Bandung',
     icon: GoLocation,
   },
   {
     label: 'PHONE NUMBER',
-    value: '+1 5589 55488 55',
+    value: '+62 1234-234',
     icon: BsPhone,
   },
   {
     label: 'EMAIL',
-    value: 'info@example.com',
+    value: 'support@tanemin.co.id',
     icon: HiOutlineMail,
   },
 ];
@@ -51,8 +51,7 @@ const Contact = () => {
               Contact Us
             </Heading>
             <Text fontSize="md" textAlign="center">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque
+              silahkan menghubungi kami untuk kritik dan saran
             </Text>
           </Flex>
           <Stack
@@ -102,7 +101,12 @@ const Contact = () => {
               >
                 <FormControl id="name">
                   <FormLabel>Name</FormLabel>
-                  <Input type="text" placeholder="Ahmad" rounded="md" />
+                  <Input
+                    type="text"
+                    placeholder="Ahmad"
+                    rounded="md"
+                    required
+                  />
                 </FormControl>
                 <FormControl id="email">
                   <FormLabel>Email</FormLabel>
@@ -110,6 +114,7 @@ const Contact = () => {
                     type="email"
                     placeholder="test@test.com"
                     rounded="md"
+                    required
                   />
                 </FormControl>
               </Stack>
@@ -119,6 +124,7 @@ const Contact = () => {
                   type="text"
                   placeholder="Are you available for freelance work?"
                   rounded="md"
+                  required
                 />
               </FormControl>
               <FormControl id="message">
@@ -127,6 +133,7 @@ const Contact = () => {
                   size="lg"
                   placeholder="Enter your message"
                   rounded="md"
+                  required
                 />
               </FormControl>
             </VStack>
