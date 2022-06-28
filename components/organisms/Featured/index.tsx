@@ -41,6 +41,7 @@ export default function Featured() {
           {topPlant.map((item: PlantTypes) => {
             return (
               <CardContainer
+                price={`${item.price}`}
                 key={item.id}
                 plantName={item.plantName}
                 author="SehatPedia"

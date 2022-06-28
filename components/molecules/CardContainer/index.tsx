@@ -2,12 +2,13 @@ import { Image } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import NumberFormat from 'react-number-format';
+
 interface CardData {
   imageUrl?: string;
   plantName: string;
   author: string;
   href: string;
-  price: number;
+  price?: string;
 }
 
 export default function CardContainer(props: CardData) {
