@@ -1,5 +1,5 @@
 exports.config = {
-  tests: 'e2e/**/*.spec.ts',
+  tests: 'e2e/**/*.spec.js',
   output: 'e2e/outputs',
   helpers: {
     Puppeteer: {

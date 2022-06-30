@@ -27,16 +27,3 @@ Scenario('Access detail from explore page', async ({ I }) => {
     I.seeElement('.detail-container')
 })
 
-function Before(arg0: ({ I }: { I: any; }) => void) {
-    throw new Error("Function not implemented.");
-}
-
-
-function Scenario(arg0: string, arg1: ({ I }: { I: any; }) => Promise<void>) {
-    throw new Error("Function not implemented.");
-}
-
-
-function locate(arg0: string) {
-    throw new Error("Function not implemented.");
-}

@@ -68,7 +68,7 @@ export default function Header(props: HeaderDetailProps) {
         <Image
           src={imgUrl}
           fallbackSrc="https://via.placeholder.com/150"
-          alt="Cooking master"
+          alt="Detail Image Header"
         />
       </div>
     </>

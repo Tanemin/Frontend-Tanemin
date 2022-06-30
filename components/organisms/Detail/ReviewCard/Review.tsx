@@ -9,6 +9,15 @@ interface ReviewProps {
 export default function Review(props: ReviewProps) {
   const { reviews } = props;
   console.log(reviews);
+
+  if (reviews.length === 0) {
+    return (
+      <>
+        <h3>Reviews</h3>
+        <p>Belum ada review</p>
+      </>
+    );
+  }
   return (
     <>
       <h3>Reviews</h3>

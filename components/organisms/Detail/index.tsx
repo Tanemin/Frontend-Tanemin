@@ -8,6 +8,7 @@ import FormPayment from './FormPayment';
 import Header from './Header';
 import Duration from './Duration';
 import Seasons from './Seasons';
+const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 export default function DetailComponent() {
   const { query, isReady } = useRouter();
@@ -29,8 +30,6 @@ export default function DetailComponent() {
     stock: 0,
     store: [],
   });
-
-  console.log(dataItem.reviews);
 
   const getPlantDetailAPI = useCallback(
     async (id: string) => {
@@ -59,7 +58,7 @@ export default function DetailComponent() {
           itemType={dataItem.type}
           itemName={dataItem.plantName}
           itemStar={dataItem.ratingsQuantity}
-          imgUrl={dataItem.imageCover}
+          imgUrl={`${ROOT_API_IMAGE}/${dataItem.imageCover}`}
           viewCount={dataItem.viewCount}
           sold={dataItem.sold}
           stock={dataItem.stock}

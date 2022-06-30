@@ -7,10 +7,10 @@ import Footer from '../../components/organisms/Footer';
 import Navbar from '../../components/organisms/Navbar';
 import { PlantTypes } from '../../services/data-types';
 import { getDetailStore } from '../../services/store';
+const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 export default function Store() {
   const { query, isReady } = useRouter();
-  const router = useRouter();
   const [dataItem, setDataItem] = useState({
     id: '',
     storeName: '',
@@ -68,9 +68,6 @@ export default function Store() {
             </p>
           </div>
         </div>
-        {/* <div className="operations">
-          <TabListComponent />
-        </div> */}
         <div className="content-container">
           {dataItem.plants.map((item: PlantTypes) => {
             return (
@@ -78,7 +75,7 @@ export default function Store() {
                 key={item.id}
                 plantName={item.plantName}
                 author="SehatPedia"
-                imageUrl={item.imageCover}
+                imageUrl={`${ROOT_API_IMAGE}/${item.imageCover}`}
                 href={`/detail/${item.id}`}
               />
             );

@@ -47,8 +47,3 @@ Scenario('Test register function', ({ I }) => {
 })
 
 
-
-function Feature(arg0: string) {
-    throw new Error("Function not implemented.");
-}
-
