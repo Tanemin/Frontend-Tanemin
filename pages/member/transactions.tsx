@@ -1,4 +1,5 @@
 import {
+  Button,
   Table,
   TableContainer,
   Tbody,
@@ -9,6 +10,7 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
+import ModalReview from '../../components/atoms/ModalReview';
 
 import SimpleSidebar from '../../components/organisms/Layout/Sidebar';
 import { getUserData } from '../../services/auth';
@@ -16,13 +18,15 @@ import { getUserData } from '../../services/auth';
 export default function Transactions() {
   const [transactions, setTransactions] = useState([
     {
-      id: '',
+      _id: Math.random(),
       plant: {
-        plantName: '',
+        id: '',
+        plantName: 'Test',
         price: 0,
       },
       ammount: 0,
-      CreatedAt: Date.now(),
+      CreatedAt: 'Date.now',
+      isReview: false,
     },
   ]);
   console.log(transactions);
@@ -51,30 +55,38 @@ export default function Transactions() {
                 <Th>Jumlah</Th>
                 <Th>Waktu</Th>
                 <Th>Total</Th>
+                <Th>Review</Th>
               </Tr>
             </Thead>
             <Tbody borderTop={'2px solid #000'}>
-              {transactions.map((item) => {
-                const date = item.CreatedAt;
-                const total = item.plant.price * item.ammount;
-                return (
-                  <>
-                    <Tr key={item.id}>
-                      <Td>{item.plant.plantName}</Td>
-                      <Td>{item.plant.price}</Td>
-                      <Td>{item.ammount}</Td>
-                      <Td>{date}</Td>
-                      <Td>{total}</Td>
-                    </Tr>
-                  </>
-                );
-              })}
+              {transactions.length === 0 ? (
+                <h3>Belum ada transaksi</h3>
+              ) : (
+                transactions.map((item, index) => {
+                  const date = item.CreatedAt;
+                  const total = item.plant.price * item.ammount;
+
+                  return (
+                    <>
+                      <Tr key={index}>
+                        <Td>{item.plant.plantName}</Td>
+                        <Td>{item.plant.price}</Td>
+                        <Td>{item.ammount}</Td>
+                        <Td>{date.substring(0, 10)}</Td>
+                        <Td>{total}</Td>
+                        <Td>
+                          {!item.isReview ? (
+                            <ModalReview _id={`${item.plant.id}`} />
+                          ) : (
+                            <Button disabled>Reviewed</Button>
+                          )}
+                        </Td>
+                      </Tr>
+                    </>
+                  );
+                })
+              )}
             </Tbody>
-            <Tfoot>
-              <Tr>
-                <Th>Total</Th>
-              </Tr>
-            </Tfoot>
           </Table>
         </TableContainer>
       </SimpleSidebar>

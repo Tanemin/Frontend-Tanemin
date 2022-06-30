@@ -1,5 +1,6 @@
 import { StarIcon } from '@chakra-ui/icons';
 import { Badge, Image, Tag } from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 interface HeaderDetailProps {
   itemName: string;
@@ -9,6 +10,10 @@ interface HeaderDetailProps {
   itemStar: number;
   itemType: Array<string>;
   difficulty: string;
+  viewCount: number;
+  sold: number;
+  stock: number;
+  store: any;
 }
 
 export default function Header(props: HeaderDetailProps) {
@@ -18,7 +23,12 @@ export default function Header(props: HeaderDetailProps) {
     imgUrl = '/assets/mainPoster.png',
     itemType,
     difficulty,
+    viewCount,
+    sold,
+    stock,
+    store,
   } = props;
+
   return (
     <>
       <div className="detail-header">
@@ -28,7 +38,12 @@ export default function Header(props: HeaderDetailProps) {
             {difficulty}
           </Badge>
         </h2>
-        <p className="item-author">by Irwan Gumilar</p>
+        <p className="item-author">
+          {viewCount} Views | {sold} Sold | {stock} Stock
+        </p>
+        <Link href={`/store/${store.id}`}>
+          <a className="item-author link-page">Visit Our Page</a>
+        </Link>
         <p className="item-review">
           {Array(5)
             .fill('')
@@ -37,8 +52,7 @@ export default function Header(props: HeaderDetailProps) {
                 key={i}
                 color={i < itemStar ? 'yellow.400' : 'gray.300'}
               />
-            ))}{' '}
-          | 12.234 students
+            ))}
         </p>
         {itemType.map((type: string, i) => (
           <Tag
@@ -54,7 +68,7 @@ export default function Header(props: HeaderDetailProps) {
         <Image
           src={imgUrl}
           fallbackSrc="https://via.placeholder.com/150"
-          alt="Cooking master"
+          alt="Detail Image Header"
         />
       </div>
     </>

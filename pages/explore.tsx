@@ -5,6 +5,7 @@ import { getPlants } from '../services/plant-list';
 import { PlantTypes } from '../services/data-types';
 import { Container, Spinner } from '@chakra-ui/react';
 import Footer from '../components/organisms/Footer';
+const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 export default function Explore() {
   const [plantList, setPlantList] = useState([]);
@@ -54,7 +55,7 @@ export default function Explore() {
               key={item.id}
               plantName={item.plantName}
               author="SehatPedia"
-              imageUrl={item.imageCover}
+              imageUrl={`${ROOT_API_IMAGE}/${item.imageCover}`}
               href={`/detail/${item.id}`}
             />
           );

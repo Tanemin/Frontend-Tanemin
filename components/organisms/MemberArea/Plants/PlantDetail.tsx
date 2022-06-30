@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Image, Tag } from '@chakra-ui/react';
 import Seasons from '../../Detail/Seasons';
+const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 interface Props {
   plant: any;
@@ -18,7 +19,7 @@ const PlantDetail = ({ plant }: Props) => {
         justifyContent={'center'}
       >
         <Image
-          src={imageCover}
+          src={`${ROOT_API_IMAGE}/${imageCover}`}
           fallbackSrc="https://via.placeholder.com/150"
           alt="Cooking master"
           width={'500px'}

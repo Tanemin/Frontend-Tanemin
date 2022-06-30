@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { PlantTypes } from '../../../services/data-types';
 import { getTopPlant } from '../../../services/plant-list';
 import CardContainer from '../../molecules/CardContainer';
+const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 export default function Featured() {
   const [topPlant, setTopPlant] = useState([]);
@@ -41,10 +42,11 @@ export default function Featured() {
           {topPlant.map((item: PlantTypes) => {
             return (
               <CardContainer
+                price={`${item.price}`}
                 key={item.id}
                 plantName={item.plantName}
                 author="SehatPedia"
-                imageUrl={item.imageCover}
+                imageUrl={`${ROOT_API_IMAGE}/${item.imageCover}`}
                 href={`/detail/${item.id}`}
               />
             );

@@ -28,16 +28,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="dicoding:email" content="f2262a232@dicoding.org" />
         <meta
           name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>Tanemin</title>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#53BF9D" />
-        <link rel="apple-touch-icon" href="/icon/icon-72x72.png"></link>
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <ChakraProvider>
         <Elements stripe={stripePromise}>

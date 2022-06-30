@@ -72,7 +72,8 @@
 
 @media (max-width: 59em) {
   .content-container,
-  .item_list {
+  .item_list,
+  .chakra-tabs__tab-panel:nth-child(1) {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -131,14 +132,20 @@
 
 @media (max-width: 40em) {
   .content-container,
-  .item_list {
+  .item_list,
+  .chakra-tabs__tab-panel:nth-child(1) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-review {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media (max-width: 30em) {
   .content-container,
-  .item_list {
+  .item_list,
+  .chakra-tabs__tab-panel:nth-child(1) {
     grid-template-columns: repeat(1, 1fr);
   }
 }

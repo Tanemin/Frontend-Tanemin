@@ -15,7 +15,7 @@ export default function Duration() {
     <>
       <div className="tools">
         <h3>Durasi</h3>
-        <ul className="transaction-additional">
+        <Box className="transaction-additional">
           <Stat
             px={{ base: 2, md: 4 }}
             py={'5'}
@@ -40,7 +40,7 @@ export default function Duration() {
               </Box>
             </Flex>
           </Stat>
-        </ul>
+        </Box>
       </div>
     </>
   );

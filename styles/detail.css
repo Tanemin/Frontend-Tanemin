@@ -13,7 +13,10 @@
 
 .detail-header .item-author {
   color: #8b8ba5;
-  margin-bottom: 30px;
+}
+
+.link-page:hover {
+  color: black;
 }
 
 .detail-header .item-review {
@@ -63,18 +66,20 @@
 }
 
 .detail-review {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   list-style: none;
 }
 
 .detail-review .item-review {
   margin-bottom: 30px;
+  width: 400px;
 }
 
 .detail-review .item-review .review-account {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px;
-  margin-bottom: 25px;
 }
 
 .detail-review .item-review .review-account img {
@@ -86,8 +91,8 @@
 }
 
 .detail-review .item-review .review-account .account-detail {
-  display: grid;
-  grid-template-rows: 1fr auto auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .detail-review .item-review .review-account h4 {

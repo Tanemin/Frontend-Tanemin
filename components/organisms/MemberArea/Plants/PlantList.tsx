@@ -1,6 +1,7 @@
 import React from 'react';
 import { PlantTypes } from '../../../../services/data-types';
 import CardContainer from '../../../molecules/CardContainer';
+const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 interface Props {
   plants: any;
@@ -16,7 +17,7 @@ const PlantList = ({ plants }: Props) => {
             key={item.id}
             plantName={item.plantName}
             author="SehatPedia"
-            imageUrl={item.imageCover}
+            imageUrl={`${ROOT_API_IMAGE}/${item.imageCover}`}
             href={`plants/${item.id}`}
           />
         ))}
