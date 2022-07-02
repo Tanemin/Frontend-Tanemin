@@ -30,8 +30,6 @@ export default function Store() {
     ratingStore: 0,
   });
 
-  console.log(dataItem);
-
   const getPlantDetailAPI = useCallback(async (id: string) => {
     try {
       const data = await getDetailStore(id);

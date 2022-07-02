@@ -27,7 +27,6 @@ const MemberHero = () => {
         const weather = await currentWeather(data);
 
         setWeatherData(weather.data);
-        console.log(weather);
       });
     } catch (error) {
       console.log(error);

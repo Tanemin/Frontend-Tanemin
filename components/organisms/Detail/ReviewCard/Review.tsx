@@ -8,7 +8,6 @@ interface ReviewProps {
 
 export default function Review(props: ReviewProps) {
   const { reviews } = props;
-  console.log(reviews);
 
   if (reviews.length === 0) {
     return (

@@ -9,7 +9,6 @@ export const getDetailStore = async (id: string) => {
     });
 
     const { result } = response.data
-    console.log(result)
     return result
 }
 

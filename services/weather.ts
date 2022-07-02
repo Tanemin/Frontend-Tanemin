@@ -8,7 +8,6 @@ interface LocationProps {
 
 export const currentWeather = async (props: LocationProps) => {
     const { lat, lng } = props
-    console.log(lat, lng)
     const response = await axios.get(`https://api.ambeedata.com/weather/latest/by-lat-lng?lat=${lat}&lng=${lng}`,
         {
             headers: {

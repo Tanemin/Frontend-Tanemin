@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
+import SignGoogle from '../components/atoms/SignGoogle';
 
 export default function SignUp() {
   const [name, setName] = useState('');
@@ -115,15 +116,7 @@ export default function SignUp() {
         </Button>
         <br />
         <p className="text-or2">or continue with </p> <br />
-        <Button
-          colorScheme="gray"
-          size="md"
-          width={314}
-          height={50}
-          leftIcon={<FaGoogle />}
-        >
-          SignUp with Google
-        </Button>
+        <SignGoogle />
       </form>
     </div>
   );

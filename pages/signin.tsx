@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
+import SignGoogle from '../components/atoms/SignGoogle';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -26,7 +27,6 @@ export default function SignIn() {
       email,
       password,
     };
-    console.log(data);
 
     try {
       await setLogin(data);
@@ -139,15 +139,7 @@ export default function SignIn() {
           </Button>
           <br />
           <p className="text-or">or continue with </p> <br />
-          <Button
-            colorScheme="gray"
-            size="md"
-            width={314}
-            height={50}
-            leftIcon={<FaGoogle />}
-          >
-            SignUp with Google
-          </Button>
+          <SignGoogle />
         </form>
       </Flex>
     </Stack>

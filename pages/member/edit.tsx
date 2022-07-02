@@ -12,11 +12,12 @@ import {
   AvatarBadge,
   IconButton,
   Center,
+  useToast,
 } from '@chakra-ui/react';
-import { SmallCloseIcon } from '@chakra-ui/icons';
 import SimpleSidebar from '../../components/organisms/Layout/Sidebar';
 
 export default function Edit() {
+  const toast = useToast();
   return (
     <SimpleSidebar>
       <Flex
@@ -38,27 +39,7 @@ export default function Edit() {
           <Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
             User Profile Edit
           </Heading>
-          <FormControl id="userName">
-            <FormLabel>User Icon</FormLabel>
-            <Stack direction={['column', 'row']} spacing={6}>
-              <Center>
-                <Avatar size="xl" src="https://bit.ly/sage-adebayo">
-                  <AvatarBadge
-                    as={IconButton}
-                    size="sm"
-                    rounded="full"
-                    top="-10px"
-                    colorScheme="red"
-                    aria-label="remove Image"
-                    icon={<SmallCloseIcon />}
-                  />
-                </Avatar>
-              </Center>
-              <Center w="full">
-                <Button w="full">Change Icon</Button>
-              </Center>
-            </Stack>
-          </FormControl>
+
           <FormControl id="userName" isRequired>
             <FormLabel>User name</FormLabel>
             <Input
@@ -100,6 +81,14 @@ export default function Edit() {
               w="full"
               _hover={{
                 bg: 'blue.500',
+              }}
+              onClick={() => {
+                toast({
+                  title: `Error`,
+                  description: `Fitur masih dalam tahap pengembangan`,
+                  status: 'error',
+                  isClosable: true,
+                });
               }}
             >
               Submit

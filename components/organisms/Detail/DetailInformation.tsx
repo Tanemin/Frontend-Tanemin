@@ -12,7 +12,6 @@ interface DetailInformationProps {
 export default function DetailInformation(props: DetailInformationProps) {
   const { description, reviews, imagesSrc } = props;
   const splitDesc = description.split('\n');
-  console.log(splitDesc.length);
   return (
     <>
       <div className="detail-information">
