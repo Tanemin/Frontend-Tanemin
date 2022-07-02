@@ -10,7 +10,6 @@ interface Props {
 }
 
 const PlantDetailPage = ({ plant }: Props) => {
-  console.log(plant);
   return (
     <SimpleSidebar>
       <div>

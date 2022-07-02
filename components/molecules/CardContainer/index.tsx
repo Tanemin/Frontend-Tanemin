@@ -45,18 +45,19 @@ export default function CardContainer(props: CardData) {
     }
   };
   return (
-    <div className="card-content hover-pointer">
-      {isDeleted && (
-        <CloseButton onClick={deleteCartHandler} alignSelf="flex-end" />
-      )}
-      <div className="card-content__image">
-        <Image
-          src={imageUrl}
-          fallbackSrc="https://via.placeholder.com/150"
-          alt="Plants Category"
-        />
-      </div>
-      <Link href={href} passHref>
+    <Link href={href} passHref>
+      <div className="card-content hover-pointer">
+        {isDeleted && (
+          <CloseButton onClick={deleteCartHandler} alignSelf="flex-end" />
+        )}
+        <div className="card-content__image">
+          <Image
+            src={imageUrl}
+            fallbackSrc="https://via.placeholder.com/150"
+            alt="Plants Category"
+          />
+        </div>
+
         <div className="card-content__info">
           <p className="food-name">{plantName}</p>
           <a className="food-author">
@@ -69,7 +70,7 @@ export default function CardContainer(props: CardData) {
           </a>
           <div className="star-container"></div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }

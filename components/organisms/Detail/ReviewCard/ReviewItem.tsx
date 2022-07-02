@@ -11,7 +11,6 @@ interface ReviewItemProps {
 
 export default function ReviewItem(props: ReviewItemProps) {
   const { photo, name, review, itemStar } = props;
-  console.log(photo);
   return (
     <>
       <li className="item-review">

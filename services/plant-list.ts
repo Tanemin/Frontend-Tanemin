@@ -21,7 +21,6 @@ export const getDetailPlant = async (id: string) => {
     });
 
     const { result } = response.data
-    console.log(result)
     return result
 }
 
@@ -41,7 +40,6 @@ export const postCartPlant = async (props: postPlant) => {
         return null
     }
     const tokenBase64 = Buffer.from(token as string, 'base64').toString('ascii')
-    console.log(tokenBase64)
     const response = await axios.post(`${ROOT_API}/${API_VERSION}/plants/${id}/carts`,
         {
             ammount

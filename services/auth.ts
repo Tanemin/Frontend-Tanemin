@@ -19,8 +19,6 @@ export const setLogin = async (data: any) => {
         data
     );
 
-    console.log(response)
-
     const { result, token } = response.data
     const tokenBase64 = Buffer.from(token).toString('base64')
     Cookie.set('token', tokenBase64, { expires: 2 })

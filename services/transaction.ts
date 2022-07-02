@@ -40,6 +40,5 @@ export const getTransactionById = async () => {
             }
         })
     const { result } = resposne.data
-    console.log(result)
     return result
 }

@@ -29,7 +29,6 @@ export default function Transactions() {
       isReview: false,
     },
   ]);
-  console.log(transactions);
   const getTransactionsList = useCallback(async () => {
     try {
       const data = await getUserData();

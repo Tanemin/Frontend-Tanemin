@@ -30,6 +30,7 @@ export default function Featured() {
         {isLoading && (
           <Container centerContent>
             <Spinner
+              mt={'40px'}
               thickness="4px"
               speed="0.65s"
               emptyColor="gray.200"

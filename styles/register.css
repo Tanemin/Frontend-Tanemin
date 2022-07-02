@@ -23,39 +23,10 @@
   padding-right: 100px;
 }
 
-.form-control {
-  box-sizing: border-box;
-  display: inline;
-  align-items: center;
-  width: 320px;
-  height: 45px;
-  left: 864px;
-  top: 228px;
-  margin: 7px 0;
-  background: #fbfbfb;
-  border: 1px solid #f0f0f0;
-  border-radius: 8px;
-}
-
 .text-or2 {
   font-size: 16px;
   color: #8b8ba5;
   font-weight: 400px;
-  text-align: center;
-}
-
-button.secondary {
-  width: 314px;
-  height: 50px;
-  margin: 24px 0;
-  background-color: #4e944f;
-  padding: 10px 40px;
-  border: none;
-  /* border-radius: 70px; */
-  color: #ffff;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 40px 40px 20px 20px;
   text-align: center;
 }
 

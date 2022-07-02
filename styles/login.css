@@ -95,6 +95,7 @@ h1.text-hero {
   background: #fbfbfb;
   border: 1px solid #f0f0f0;
   border-radius: 8px;
+  padding: 1rem;
 }
 
 button.secondary {

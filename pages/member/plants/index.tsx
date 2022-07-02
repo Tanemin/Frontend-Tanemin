@@ -18,7 +18,6 @@ const plants = ({ plants }: Props) => {
 export const getServerSideProps = async () => {
   const plants = await getTopPlant();
 
-  console.log(plants);
   return {
     props: {
       plants,

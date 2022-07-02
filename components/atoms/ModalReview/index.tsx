@@ -28,7 +28,6 @@ interface ModalReviewProps {
 export default function ModalReview(props: ModalReviewProps) {
   const { _id: id } = props;
   const [review, setreview] = useState('');
-  console.log(review);
   const [rating, setRating] = useState(0);
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();

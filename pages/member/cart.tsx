@@ -7,7 +7,6 @@ const ROOT_API_IMAGE = process.env.NEXT_PUBLIC_API_IMAGE;
 
 export default function Cart() {
   const [plantList, setPlantList] = useState([]);
-  console.log(plantList);
 
   const getPlantListItem = useCallback(async () => {
     try {
