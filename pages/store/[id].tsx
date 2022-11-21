@@ -79,9 +79,14 @@ export default function Store() {
             );
           })}
         </div>
+
       </div>
 
+      <p>
+        Hello Team
+      </p>
+
       <Footer />
-    </>
+    </div>
   );
 }
