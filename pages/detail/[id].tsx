@@ -3,6 +3,7 @@ import { useState } from 'react';
 import DetailComponent from '../../components/organisms/Detail';
 
 export default function Detail() {
+  console.log("Hello World");
   const [isLoading, setIsLoading] = useState(true);
 
   useInterval(() => {
